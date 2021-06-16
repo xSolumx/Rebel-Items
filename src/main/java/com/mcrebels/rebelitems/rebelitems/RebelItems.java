@@ -1,7 +1,6 @@
 package com.mcrebels.rebelitems.rebelitems;
 
 import co.aikar.commands.PaperCommandManager;
-import com.mcrebels.rebelitems.rebelitems.allItems.testItem;
 import com.mcrebels.rebelitems.rebelitems.allItems.harpoon;
 import com.mcrebels.rebelitems.rebelitems.allItems.testGUI;
 import org.bukkit.plugin.java.JavaPlugin;
