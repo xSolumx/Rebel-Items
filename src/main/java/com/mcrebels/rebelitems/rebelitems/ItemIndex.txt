@@ -1,0 +1,5 @@
+TestItem 1
+foundersSword 2
+chickenSword 3
+chickenbones 4
+harpoon 5
