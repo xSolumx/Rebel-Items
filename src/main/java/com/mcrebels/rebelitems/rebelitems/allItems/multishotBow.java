@@ -26,7 +26,7 @@ public class testItem extends Item implements Listener {
 
 
 
-    public testItem(){
+    public multishotBow(){
         item = new ItemStack(itemMaterial, 1);
         ItemMeta tMeta = item.getItemMeta();
         tMeta.setCustomModelData(customMetaID);
