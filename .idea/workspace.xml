@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5cecf6fb-822a-46b5-83be-8def78c58be3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="ProjectId" id="1u0dD7WFGMz0LicJCI1cWZazo63" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.43563217" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="rebelsitems [clean,package]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5cecf6fb-822a-46b5-83be-8def78c58be3" name="Default Changelist" comment="" />
+      <created>1623806317365</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623806317365</updated>
+    </task>
+    <task id="LOCAL-00001" summary="testing">
+      <created>1623806490549</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623806490549</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Updated dependencies and added vampire sword">
+      <created>1623810020578</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1623810020578</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Updated more dependencies">
+      <created>1623810867177</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1623810867177</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added some janky code">
+      <created>1624195278480</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1624195278480</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="testing" />
+    <MESSAGE value="Updated dependencies and added vampire sword" />
+    <MESSAGE value="Updated more dependencies" />
+    <MESSAGE value="Added some janky code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some janky code" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="617" y="215" width="814" height="728" key="#Intentions" timestamp="1623872797753">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="617" y="215" width="814" height="728" key="#Intentions/0.0.2048.1112@0.0.2048.1112" timestamp="1623872797753" />
+    <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1623871198254">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1623871198254" />
+    <state x="830" y="260" key="#com.intellij.ide.util.MemberChooser" timestamp="1623873127041">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="830" y="260" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1623873127041" />
+    <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1623809474327">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1623809474327" />
+    <state x="452" y="14" key="CommitChangelistDialog2" timestamp="1624195277021">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="452" y="14" key="CommitChangelistDialog2/0.0.2048.1112@0.0.2048.1112" timestamp="1624195277021" />
+    <state x="805" y="311" key="FileChooserDialogImpl" timestamp="1623871138130">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="805" y="311" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1623871138130" />
+    <state width="2005" height="290" key="GridCell.Tab.0.bottom" timestamp="1624055831394">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="290" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1624055831394" />
+    <state width="2005" height="290" key="GridCell.Tab.0.center" timestamp="1624055831394">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="290" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1624055831394" />
+    <state width="2005" height="290" key="GridCell.Tab.0.left" timestamp="1624055831393">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="290" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1624055831393" />
+    <state width="2005" height="290" key="GridCell.Tab.0.right" timestamp="1624055831394">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="290" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1624055831394" />
+    <state x="505" y="131" key="SettingsEditor" timestamp="1623806421097">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="505" y="131" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1623806421097" />
+    <state x="617" y="285" key="Vcs.Push.Dialog.v2" timestamp="1624195474734">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="617" y="285" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1624195474734" />
+    <state x="833" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1623810185703">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="833" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1112@0.0.2048.1112" timestamp="1623810185703" />
+  </component>
+</project>
