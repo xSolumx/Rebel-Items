@@ -43,6 +43,11 @@ public class chickenBones extends Item {
         item.setItemMeta(tMeta);
     }
 
+    @Override
+    public String getName() {
+        return "ChickenBones";
+    }
+
     public ItemStack getItem()
     {
         return item;

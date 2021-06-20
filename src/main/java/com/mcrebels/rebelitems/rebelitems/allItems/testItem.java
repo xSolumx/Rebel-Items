@@ -35,6 +35,11 @@ public class testItem extends Item implements Listener {
         item.setItemMeta(tMeta);
     }
 
+    @Override
+    public String getName() {
+        return "TestItem";
+    }
+
     public ItemStack getItem(){
         return item;
     }
