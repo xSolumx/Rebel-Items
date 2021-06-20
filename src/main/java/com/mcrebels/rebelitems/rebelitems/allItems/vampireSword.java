@@ -19,7 +19,7 @@ public class vampireSword extends Item implements Listener {
 
     private final Integer customMetaID = 7;
     private final Component itemName = MiniMessage.markdown().parse("<gradient:#5e4fa2:#f79459>Vampire Sworde</gradient>");
-    private final Material itemMaterial = Material.DIAMOND_SWORD;
+    private final Material itemMaterial = Material.NETHERITE_SWORD;
     private final List<Component> itemLore = Arrays.asList(
             MiniMessage.markdown().parse("<gradient:green:blue>===================</gradient>"),
             MiniMessage.markdown().parse("<gradient:green:blue>this is the first lore line</gradient>"),
@@ -35,6 +35,11 @@ public class vampireSword extends Item implements Listener {
         tMeta.lore(itemLore);
         tMeta.displayName(itemName);
         item.setItemMeta(tMeta);
+    }
+
+    @Override
+    public String getName() {
+        return "VampireSword";
     }
 
     public ItemStack getItem(){
