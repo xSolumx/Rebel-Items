@@ -39,6 +39,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.43563217" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
@@ -133,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624195278480</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added some janky code">
+      <created>1624195643865</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1624195643865</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -160,10 +168,14 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1623809474327" />
-    <state x="452" y="14" key="CommitChangelistDialog2" timestamp="1624195277021">
+    <state x="452" y="14" key="CommitChangelistDialog2" timestamp="1624195642659">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="452" y="14" key="CommitChangelistDialog2/0.0.2048.1112@0.0.2048.1112" timestamp="1624195277021" />
+    <state x="452" y="14" key="CommitChangelistDialog2/0.0.2048.1112@0.0.2048.1112" timestamp="1624195642659" />
+    <state x="209" y="111" key="DiffContextDialog" timestamp="1624195623926">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="209" y="111" key="DiffContextDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1624195623926" />
     <state x="805" y="311" key="FileChooserDialogImpl" timestamp="1623871138130">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -184,14 +196,14 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2005" height="290" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1624055831394" />
-    <state x="505" y="131" key="SettingsEditor" timestamp="1623806421097">
+    <state x="505" y="131" key="SettingsEditor" timestamp="1624195796901">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="505" y="131" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1623806421097" />
-    <state x="617" y="285" key="Vcs.Push.Dialog.v2" timestamp="1624195474734">
+    <state x="505" y="131" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1624195796901" />
+    <state x="617" y="285" key="Vcs.Push.Dialog.v2" timestamp="1624195650543">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="617" y="285" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1624195474734" />
+    <state x="617" y="285" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1624195650543" />
     <state x="833" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1623810185703">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
