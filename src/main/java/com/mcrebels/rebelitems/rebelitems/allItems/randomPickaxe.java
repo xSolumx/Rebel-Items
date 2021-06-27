@@ -22,21 +22,22 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.Arrays;
 import java.util.List;
 
-public class chickenSword extends Item implements Listener {
+public class randomPickaxe extends Item implements Listener {
     private ItemStack item;
 
     private final Integer customMetaID = 3;
-    private final Component itemName = MiniMessage.markdown().parse("<gradient:#5e4fa2:#f79459>Chicken Lord's Saber</gradient>");
+    private final Component itemName = MiniMessage.markdown().parse("<gradient:#5e4fa2:#f79459>Gambler's Pickaxe</gradient>");
     private final Material itemMaterial = Material.NETHERITE_SWORD;
     private final List<Component> itemLore = Arrays.asList(
             MiniMessage.markdown().parse("<gradient:green:blue>===================</gradient>"),
             MiniMessage.markdown().parse("<gradient:green:blue>From the treasury of the Chicken Lord himself</gradient>"),
-            MiniMessage.markdown().parse("Consumes chicken bones to smite your enemies"),
+            MiniMessage.markdown().parse("Occasionally gives the user a random minecraft block in"),
+            MiniMessage.markdown().parse("addition to the broken block."),
             MiniMessage.markdown().parse("<blue>line 4"));
 
 
 
-    public chickenSword(){
+    public randomPickaxe(){
         item = new ItemStack(itemMaterial, 1);
         ItemMeta tMeta = item.getItemMeta();
         tMeta.setCustomModelData(customMetaID);
@@ -74,5 +75,14 @@ public class chickenSword extends Item implements Listener {
                 }
             }
         }
+    }
+
+    @Override
+    public String getName() {
+        return "GamblerPickaxe";
+    }
+
+    public ItemStack getItem(){
+        return item;
     }
 }
