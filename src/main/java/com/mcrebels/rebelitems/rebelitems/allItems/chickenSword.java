@@ -75,4 +75,13 @@ public class chickenSword extends Item implements Listener {
             }
         }
     }
+
+    @Override
+    public String getName() {
+        return "ChickenSword";
+    }
+
+    public ItemStack getItem(){
+        return item;
+    }
 }

@@ -43,20 +43,28 @@ public class harpoon extends Item implements Listener {
 
     @EventHandler
     public void onHarpoonHit(ProjectileHitEvent e){
-        if (e.getEntity().getShooter() instanceof Player){
-            if (((Player) e.getEntity().getShooter()).getInventory().getItemInMainHand().getItemMeta().getCustomModelData() == 5){
-                Player player = (Player) e.getEntity().getShooter();
-                Vector pos = e.getHitEntity().getLocation().toVector();
-                Vector target = player.getLocation().toVector();
-                Vector velocity = target.subtract(pos);
+        if(e.getHitEntity()!=null) {
+            if (e.getEntity().getShooter() instanceof Player) {
+                if (((Player) e.getEntity().getShooter()).getInventory().getItemInMainHand().getItemMeta().getCustomModelData() == 5) {
+                    Player player = (Player) e.getEntity().getShooter();
+                    Vector pos = e.getHitEntity().getLocation().toVector();
+                    Vector target = player.getLocation().toVector();
+                    Vector velocity = target.subtract(pos);
 
-                //
-                e.getHitEntity().setVelocity(velocity.normalize().multiply(((player.getLocation().distance(e.getHitEntity().getLocation()))/1.5))); //change the number to change the mob's velocity
+                    //
+                    e.getHitEntity().setVelocity(velocity.normalize().multiply(((player.getLocation().distance(e.getHitEntity().getLocation())) / 1.5))); //change the number to change the mob's velocity
 
-                e.getHitEntity().getLastDamageCause().setDamage((e.getHitEntity().getLastDamageCause().getDamage()/2)); //item deals half damage
+                    e.getHitEntity().getLastDamageCause().setDamage((e.getHitEntity().getLastDamageCause().getDamage() / 2)); //item deals half damage
+                }
             }
         }
     }
+
+    @Override
+    public String getName() {
+        return "Harpoon";
+    }
+
     public ItemStack getItem(){
         return item;
     }

@@ -33,4 +33,11 @@ public class foundersSword extends Item implements Listener{
         item.setItemMeta(tMeta);
     }
 
+    @Override
+    public String getName() {
+        return "FoundersSword";
+    }
+    public ItemStack getItem(){
+        return item;
+    }
 }
