@@ -30,6 +30,7 @@ public final class RebelItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new chickenSword(), this);
         getServer().getPluginManager().registerEvents(new testItem(), this);
         getServer().getPluginManager().registerEvents(new foundersSword(), this);
+        getServer().getPluginManager().registerEvents(new randomPickaxe(), this);
 
         //loaded message
         getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "+++ RebelItems");
@@ -42,7 +43,8 @@ public final class RebelItems extends JavaPlugin {
             new harpoon(),
             new chickenSword(),
             new multishotBow(),
-            new vampireSword()
+            new vampireSword(),
+            new randomPickaxe()
     );
 
     List<String> allItemsAsString = getAllItemsAsString();
