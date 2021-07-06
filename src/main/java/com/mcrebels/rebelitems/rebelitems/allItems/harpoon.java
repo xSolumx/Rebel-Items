@@ -5,6 +5,7 @@ import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.FishHook;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -52,6 +53,7 @@ public class harpoon extends Item implements Listener {
                     Vector pos = e.getHitEntity().getLocation().toVector();
                     Vector target = player.getLocation().toVector();
                     Vector velocity = target.subtract(pos);
+                    player.launchProjectile(FishHook.class, velocity);
 
                     //
                     e.getHitEntity().setVelocity(velocity.normalize().multiply(((player.getLocation().distance(e.getHitEntity().getLocation())) / 1.5))); //change the number to change the mob's velocity
