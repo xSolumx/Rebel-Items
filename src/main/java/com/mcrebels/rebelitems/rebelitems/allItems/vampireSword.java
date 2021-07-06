@@ -13,6 +13,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.mcrebels.rebelitems.rebelitems.Utilities.metaCheck;
+
 public class vampireSword extends Item implements Listener {
 
     private ItemStack item;
@@ -51,7 +53,7 @@ public class vampireSword extends Item implements Listener {
     public void onSwordAttack(EntityDamageByEntityEvent e){
         if (e.getDamager() instanceof Player){
             Player player = (Player) e.getDamager();
-            if (player.getInventory().getItemInMainHand().getItemMeta().getCustomModelData() == 7){
+            if(metaCheck(player, customMetaID)){
                 double damageDone = e.getDamage();
                 double lifeStealValue = damageDone*0.1;
                 if(player.getHealth()+lifeStealValue >= 20){

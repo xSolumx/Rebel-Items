@@ -31,6 +31,7 @@ public final class RebelItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new testItem(), this);
         getServer().getPluginManager().registerEvents(new foundersSword(), this);
         getServer().getPluginManager().registerEvents(new berserkerAxe(), this);
+        getServer().getPluginManager().registerEvents(new tpDashSword(), this);
 
         //loaded message
         getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "+++ RebelItems");
@@ -44,7 +45,8 @@ public final class RebelItems extends JavaPlugin {
             new chickenSword(),
             new multishotBow(),
             new vampireSword(),
-            new berserkerAxe()
+            new berserkerAxe(),
+            new tpDashSword()
     );
 
     List<String> allItemsAsString = getAllItemsAsString();

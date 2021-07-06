@@ -20,11 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5cecf6fb-822a-46b5-83be-8def78c58be3" name="Default Changelist" comment="Added some janky code">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/berserkerAxe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/tpDashSword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/Utilities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/ItemIndex.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/ItemIndex.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/RebelItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/RebelItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/berserkerAxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/berserkerAxe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/chickenSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/chickenSword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/harpoon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/harpoon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/multishotBow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/multishotBow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/tpDashSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/tpDashSword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/vampireSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/vampireSword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/RebelItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/RebelItems.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-rebelsitems-1.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-rebelsitems-1.1-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +106,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.43563217" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
@@ -250,14 +261,18 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1623871198254" />
-    <state x="830" y="260" key="#com.intellij.ide.util.MemberChooser" timestamp="1624570098588">
+    <state x="830" y="260" key="#com.intellij.ide.util.MemberChooser" timestamp="1625603525461">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="830" y="260" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1624570098588" />
+    <state x="830" y="260" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1625603525461" />
     <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1623809474327">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1623809474327" />
+    <state x="768" y="391" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1625600809701">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="768" y="391" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2048.1112@0.0.2048.1112" timestamp="1625600809701" />
     <state x="452" y="14" key="CommitChangelistDialog2" timestamp="1624196423042">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -270,22 +285,22 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="805" y="311" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1623871138130" />
-    <state width="1002" height="290" key="GridCell.Tab.0.bottom" timestamp="1624199467948">
+    <state width="2005" height="290" key="GridCell.Tab.0.bottom" timestamp="1625605331533">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1002" height="290" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1624199467948" />
-    <state width="1002" height="290" key="GridCell.Tab.0.center" timestamp="1624199467948">
+    <state width="2005" height="290" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1625605331533" />
+    <state width="2005" height="290" key="GridCell.Tab.0.center" timestamp="1625605331533">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1002" height="290" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1624199467948" />
-    <state width="1002" height="290" key="GridCell.Tab.0.left" timestamp="1624199467947">
+    <state width="2005" height="290" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1625605331533" />
+    <state width="2005" height="290" key="GridCell.Tab.0.left" timestamp="1625605331533">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1002" height="290" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1624199467947" />
-    <state width="1002" height="290" key="GridCell.Tab.0.right" timestamp="1624199467948">
+    <state width="2005" height="290" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1625605331533" />
+    <state width="2005" height="290" key="GridCell.Tab.0.right" timestamp="1625605331533">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1002" height="290" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1624199467948" />
+    <state width="2005" height="290" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1625605331533" />
     <state x="505" y="131" key="SettingsEditor" timestamp="1624195796901">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

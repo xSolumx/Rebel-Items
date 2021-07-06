@@ -10,9 +10,11 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-
 import java.util.Arrays;
 import java.util.List;
+
+import static com.mcrebels.rebelitems.rebelitems.Utilities.metaCheck;
+
 
 public class tpDashSword extends Item implements Listener {
 
@@ -48,9 +50,10 @@ public class tpDashSword extends Item implements Listener {
     @EventHandler
     public void onDash(PlayerInteractEvent e) {
         if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-            if(e.getPlayer().getInventory().getItemInMainHand().getItemMeta().getCustomModelData() == customMetaID){
+            if(metaCheck(e.getPlayer(), customMetaID)){
                 Player player = e.getPlayer();
                 player.setVelocity(player.getVelocity().multiply(3));
+
             }
         }
     }

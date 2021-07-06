@@ -13,6 +13,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.mcrebels.rebelitems.rebelitems.Utilities.metaCheck;
+
 public class berserkerAxe extends Item implements Listener {
 
     private ItemStack item;
@@ -49,7 +51,7 @@ public class berserkerAxe extends Item implements Listener {
     public void onHit(EntityDamageByEntityEvent e){
         if (e.getDamager() instanceof Player){
             Player player = (Player) e.getDamager();
-            if (player.getInventory().getItemInMainHand().getItemMeta().getCustomModelData() == customMetaID){
+            if (metaCheck(player,customMetaID)){
                 double damage = e.getDamage()+(e.getDamage()/player.getHealth());
                 e.setDamage(damage);
                 player.sendMessage(String.valueOf(damage));

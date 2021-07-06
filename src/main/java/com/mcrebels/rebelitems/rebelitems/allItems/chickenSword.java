@@ -22,6 +22,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.mcrebels.rebelitems.rebelitems.Utilities.metaCheck;
+
 public class chickenSword extends Item implements Listener {
     private ItemStack item;
 
@@ -60,7 +62,7 @@ public class chickenSword extends Item implements Listener {
     @EventHandler
     private void onEntityHit(EntityDamageByEntityEvent e){
         if (e.getDamager() instanceof Player){
-            if (((Player) e.getDamager()).getInventory().getItemInMainHand().getItemMeta().getCustomModelData() == 3){
+            if (metaCheck((Player) e.getDamager(), customMetaID)){
                 Player p = (Player) e.getDamager();
                 if (p.getInventory().getItemInOffHand().equals(new chickenBones().getItem())){
                     //damage logic here

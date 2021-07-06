@@ -18,6 +18,8 @@ import org.bukkit.util.Vector;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.mcrebels.rebelitems.rebelitems.Utilities.metaCheck;
+
 public class harpoon extends Item implements Listener {
     private ItemStack item;
 
@@ -45,7 +47,7 @@ public class harpoon extends Item implements Listener {
     public void onHarpoonHit(ProjectileHitEvent e){
         if(e.getHitEntity()!=null) {
             if (e.getEntity().getShooter() instanceof Player) {
-                if (((Player) e.getEntity().getShooter()).getInventory().getItemInMainHand().getItemMeta().getCustomModelData() == 5) {
+                if (metaCheck((Player) e.getEntity().getShooter(), customMetaID)) {
                     Player player = (Player) e.getEntity().getShooter();
                     Vector pos = e.getHitEntity().getLocation().toVector();
                     Vector target = player.getLocation().toVector();
