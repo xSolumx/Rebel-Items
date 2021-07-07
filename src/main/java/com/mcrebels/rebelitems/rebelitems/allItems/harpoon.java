@@ -5,6 +5,7 @@ import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.FishHook;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,6 +18,8 @@ import org.bukkit.util.Vector;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static com.mcrebels.rebelitems.rebelitems.Utilities.metaCheck;
 
 public class harpoon extends Item implements Listener {
     private ItemStack item;
@@ -45,11 +48,12 @@ public class harpoon extends Item implements Listener {
     public void onHarpoonHit(ProjectileHitEvent e){
         if(e.getHitEntity()!=null) {
             if (e.getEntity().getShooter() instanceof Player) {
-                if (((Player) e.getEntity().getShooter()).getInventory().getItemInMainHand().getItemMeta().getCustomModelData() == 5) {
+                if (metaCheck((Player) e.getEntity().getShooter(), customMetaID)) {
                     Player player = (Player) e.getEntity().getShooter();
                     Vector pos = e.getHitEntity().getLocation().toVector();
                     Vector target = player.getLocation().toVector();
                     Vector velocity = target.subtract(pos);
+                    player.launchProjectile(FishHook.class, velocity);
 
                     //
                     e.getHitEntity().setVelocity(velocity.normalize().multiply(((player.getLocation().distance(e.getHitEntity().getLocation())) / 1.5))); //change the number to change the mob's velocity

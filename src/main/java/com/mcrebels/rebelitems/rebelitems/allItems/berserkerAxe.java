@@ -15,13 +15,13 @@ import java.util.List;
 
 import static com.mcrebels.rebelitems.rebelitems.Utilities.metaCheck;
 
-public class vampireSword extends Item implements Listener {
+public class berserkerAxe extends Item implements Listener {
 
     private ItemStack item;
 
-    private final Integer customMetaID = 7;
-    private final Component itemName = MiniMessage.markdown().parse("<gradient:#5e4fa2:#f79459>Vampire Sworde</gradient>");
-    private final Material itemMaterial = Material.NETHERITE_SWORD;
+    private final Integer customMetaID = 8;
+    private final Component itemName = MiniMessage.markdown().parse("<gradient:#5e4fa2:#f79459>Berserker Axe</gradient>");
+    private final Material itemMaterial = Material.NETHERITE_AXE;
     private final List<Component> itemLore = Arrays.asList(
             MiniMessage.markdown().parse("<gradient:green:blue>===================</gradient>"),
             MiniMessage.markdown().parse("<gradient:green:blue>this is the first lore line</gradient>"),
@@ -30,7 +30,7 @@ public class vampireSword extends Item implements Listener {
 
 
 
-    public vampireSword(){
+    public berserkerAxe(){
         item = new ItemStack(itemMaterial, 1);
         ItemMeta tMeta = item.getItemMeta();
         tMeta.setCustomModelData(customMetaID);
@@ -41,27 +41,20 @@ public class vampireSword extends Item implements Listener {
 
     @Override
     public String getName() {
-        return "VampireSword";
+        return "BerserkerAxe";
     }
-
     public ItemStack getItem(){
         return item;
     }
 
-
     @EventHandler
-    public void onSwordAttack(EntityDamageByEntityEvent e){
+    public void onHit(EntityDamageByEntityEvent e){
         if (e.getDamager() instanceof Player){
             Player player = (Player) e.getDamager();
-            if(metaCheck(player, customMetaID)){
-                double damageDone = e.getDamage();
-                double lifeStealValue = damageDone*0.1;
-                if(player.getHealth()+lifeStealValue >= 20){
-                    player.setHealth(20);
-                }
-                else {
-                    player.setHealth(player.getHealth() + lifeStealValue);
-                }
+            if (metaCheck(player,customMetaID)){
+                double damage = e.getDamage()+(e.getDamage()/player.getHealth());
+                e.setDamage(damage);
+                player.sendMessage(String.valueOf(damage));
             }
         }
     }

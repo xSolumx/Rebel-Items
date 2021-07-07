@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cecf6fb-822a-46b5-83be-8def78c58be3" name="Default Changelist" comment="" />
+    <list default="true" id="5cecf6fb-822a-46b5-83be-8def78c58be3" name="Default Changelist" comment="Added some janky code">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/harpoon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/harpoon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/chickenSword.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/chickenSword.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/harpoon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/harpoon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/multishotBow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/multishotBow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/vampireSword.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/vampireSword.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-rebelsitems-1.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-rebelsitems-1.1-SNAPSHOT.jar" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,9 +42,42 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/solumDev" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="solumDev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,6 +99,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.43563217" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
@@ -141,8 +202,44 @@
       <option name="project" value="LOCAL" />
       <updated>1624195643865</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added some janky code">
+      <created>1624196056623</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1624196056623</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added some janky code">
+      <created>1625607275093</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1625607275093</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="testing" />
@@ -156,57 +253,65 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="617" y="215" width="814" height="728" key="#Intentions/0.0.2048.1112@0.0.2048.1112" timestamp="1623872797753" />
+    <state x="271" y="393" width="866" height="326" key="#Notifications" timestamp="1624196145217">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="271" y="393" width="866" height="326" key="#Notifications/0.0.2048.1112@0.0.2048.1112" timestamp="1624196145217" />
     <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1623871198254">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1623871198254" />
-    <state x="830" y="260" key="#com.intellij.ide.util.MemberChooser" timestamp="1623873127041">
+    <state x="830" y="260" key="#com.intellij.ide.util.MemberChooser" timestamp="1625603525461">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="830" y="260" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1623873127041" />
+    <state x="830" y="260" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1625603525461" />
     <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1623809474327">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1623809474327" />
-    <state x="452" y="14" key="CommitChangelistDialog2" timestamp="1624195642659">
+    <state x="768" y="391" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1625600809701">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="452" y="14" key="CommitChangelistDialog2/0.0.2048.1112@0.0.2048.1112" timestamp="1624195642659" />
-    <state x="209" y="111" key="DiffContextDialog" timestamp="1624195623926">
+    <state x="768" y="391" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2048.1112@0.0.2048.1112" timestamp="1625600809701" />
+    <state x="452" y="14" key="CommitChangelistDialog2" timestamp="1625607336731">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="209" y="111" key="DiffContextDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1624195623926" />
+    <state x="452" y="14" key="CommitChangelistDialog2/0.0.2048.1112@0.0.2048.1112" timestamp="1625607336731" />
+    <state x="209" y="111" key="DiffContextDialog" timestamp="1624196358997">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="209" y="111" key="DiffContextDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1624196358997" />
     <state x="805" y="311" key="FileChooserDialogImpl" timestamp="1623871138130">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="805" y="311" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1623871138130" />
-    <state width="2005" height="290" key="GridCell.Tab.0.bottom" timestamp="1624055831394">
+    <state width="2005" height="290" key="GridCell.Tab.0.bottom" timestamp="1625608270081">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="290" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1624055831394" />
-    <state width="2005" height="290" key="GridCell.Tab.0.center" timestamp="1624055831394">
+    <state width="2005" height="290" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1625608270081" />
+    <state width="2005" height="290" key="GridCell.Tab.0.center" timestamp="1625608270080">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="290" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1624055831394" />
-    <state width="2005" height="290" key="GridCell.Tab.0.left" timestamp="1624055831393">
+    <state width="2005" height="290" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1625608270080" />
+    <state width="2005" height="290" key="GridCell.Tab.0.left" timestamp="1625608270080">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="290" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1624055831393" />
-    <state width="2005" height="290" key="GridCell.Tab.0.right" timestamp="1624055831394">
+    <state width="2005" height="290" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1625608270080" />
+    <state width="2005" height="290" key="GridCell.Tab.0.right" timestamp="1625608270081">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="290" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1624055831394" />
+    <state width="2005" height="290" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1625608270081" />
     <state x="505" y="131" key="SettingsEditor" timestamp="1624195796901">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="505" y="131" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1624195796901" />
-    <state x="617" y="285" key="Vcs.Push.Dialog.v2" timestamp="1624195650543">
+    <state x="617" y="285" key="Vcs.Push.Dialog.v2" timestamp="1625607356897">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="617" y="285" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1624195650543" />
-    <state x="833" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1623810185703">
+    <state x="617" y="285" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1625607356897" />
+    <state x="833" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1625608998631">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="833" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1112@0.0.2048.1112" timestamp="1623810185703" />
+    <state x="833" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1112@0.0.2048.1112" timestamp="1625608998631" />
   </component>
 </project>
