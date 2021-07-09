@@ -5,6 +5,7 @@ import com.mcrebels.rebelitems.rebelitems.allItems.misc.chickenBones;
 import com.sk89q.worldedit.world.registry.BlockMaterial;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -44,7 +45,9 @@ public class randomPickaxe extends Item implements Listener {
             MiniMessage.markdown().parse("Occasionally gives the user a random minecraft block in"),
             MiniMessage.markdown().parse("addition to the broken block."));
 
-
+    /*
+    TODO: Use the new meta check method to avoid console spam
+     */
 
     public randomPickaxe(){
         item = new ItemStack(itemMaterial, 1);
@@ -60,11 +63,10 @@ public class randomPickaxe extends Item implements Listener {
     private void onBlockBreak(BlockBreakEvent b){
         if(b.getPlayer() != null &&
                 b.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasCustomModelData() &&
-                b.getPlayer().getInventory().getItemInMainHand().getItemMeta().getCustomModelData() == 8) {
+                b.getPlayer().getInventory().getItemInMainHand().getItemMeta().getCustomModelData() == 10) {
             if(Math.random() < .005) {
                 Player player = b.getPlayer();
                 Location dropsLoc = b.getBlock().getLocation();
-
                 Material randomMaterial;
                 randomMaterial = matchMaterial(listOfLines.get((int)(Math.random() * listOfLines.size())));
                 player.getWorld().dropItemNaturally(dropsLoc, new ItemStack(randomMaterial, 1));
