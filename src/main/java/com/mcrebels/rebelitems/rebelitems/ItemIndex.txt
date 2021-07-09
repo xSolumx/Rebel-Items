@@ -5,4 +5,6 @@ chickenbones 4
 harpoon 5
 multishotbow 6
 vampire sword 7
-gamblerPickaxe 8
+berserker Axe 8
+tpDashSword 9
+gamblerPickaxe 10

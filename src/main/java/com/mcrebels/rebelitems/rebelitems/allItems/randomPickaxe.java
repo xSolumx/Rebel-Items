@@ -1,40 +1,26 @@
 package com.mcrebels.rebelitems.rebelitems.allItems;
 
-import com.mcrebels.rebelitems.rebelitems.RebelItems;
-import com.mcrebels.rebelitems.rebelitems.allItems.misc.chickenBones;
-import com.sk89q.worldedit.world.registry.BlockMaterial;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.util.Vector;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.bukkit.Bukkit.getServer;
-import static org.bukkit.Material.getMaterial;
+import static com.mcrebels.rebelitems.rebelitems.Utilities.metaCheck;
 import static org.bukkit.Material.matchMaterial;
 
 public class randomPickaxe extends Item implements Listener {
     private ItemStack item;
 
-    private final Integer customMetaID = 8;
+    private final Integer customMetaID = 10;
     private final Component itemName = MiniMessage.markdown().parse("<gradient:#5e4fa2:#f79459>Gambler's Pickaxe</gradient>");
     private final Material itemMaterial = Material.NETHERITE_PICKAXE;
     private final List<String> listOfLines;
@@ -43,8 +29,6 @@ public class randomPickaxe extends Item implements Listener {
             MiniMessage.markdown().parse("<gradient:yellow:blue>From the treasury of the Chicken Lord himself</gradient>"),
             MiniMessage.markdown().parse("Occasionally gives the user a random minecraft block in"),
             MiniMessage.markdown().parse("addition to the broken block."));
-
-
 
     public randomPickaxe(){
         item = new ItemStack(itemMaterial, 1);
@@ -58,16 +42,15 @@ public class randomPickaxe extends Item implements Listener {
 
     @EventHandler
     private void onBlockBreak(BlockBreakEvent b){
-        if(b.getPlayer() != null &&
-                b.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasCustomModelData() &&
-                b.getPlayer().getInventory().getItemInMainHand().getItemMeta().getCustomModelData() == 8) {
-            if(Math.random() < .005) {
-                Player player = b.getPlayer();
-                Location dropsLoc = b.getBlock().getLocation();
-
-                Material randomMaterial;
-                randomMaterial = matchMaterial(listOfLines.get((int)(Math.random() * listOfLines.size())));
-                player.getWorld().dropItemNaturally(dropsLoc, new ItemStack(randomMaterial, 1));
+        if(b.getPlayer() != null) {
+            if(metaCheck(b.getPlayer(), customMetaID)) {
+                if(Math.random() < .005) {
+                    Player player = b.getPlayer();
+                    Location dropsLoc = b.getBlock().getLocation();
+                    Material randomMaterial;
+                    randomMaterial = matchMaterial(listOfLines.get((int)(Math.random() * listOfLines.size())));
+                    player.getWorld().dropItemNaturally(dropsLoc, new ItemStack(randomMaterial, 1));
+                }
             }
         }
     }

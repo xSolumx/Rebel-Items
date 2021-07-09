@@ -2,7 +2,7 @@ name: RebelItems
 version: ${project.version}
 main: com.mcrebels.rebelitems.rebelitems.RebelItems
 api-version: 1.16
-authors: [xSolum]
+authors: [xSolum, blackcobra987]
 description: Adds Custom items
 
 commands:
