@@ -47,7 +47,7 @@ public final class RebelItems extends JavaPlugin {
             new multishotBow(),
             new vampireSword(),
             new berserkerAxe(),
-            new tpDashSword()
+            new tpDashSword(),
             new randomPickaxe()
     );
 
