@@ -19,14 +19,14 @@ public final class RebelItems extends JavaPlugin {
 
     private static RebelItems plugin;
     private static PaperCommandManager commandManager;
-
+    List<Item> allItems;
+    List<String> allItemsAsString;
 
     @Override
     public void onEnable() {
         // Plugin startup logic
         plugin = this;
-        plugin.saveDefaultConfig();
-        registerCommands();
+        this.saveDefaultConfig();
 
         //load item event listeners
         getServer().getPluginManager().registerEvents(new vampireSword(), this);
@@ -39,24 +39,31 @@ public final class RebelItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new tpDashSword(), this);
         getServer().getPluginManager().registerEvents(new randomPickaxe(), this);
 
+        //item name index for command completions (idek how to handle this better)
+        allItems = getAllItems();
+
+        allItemsAsString = getAllItemsAsString();
+
+        registerCommands();
+
         //loaded message
         getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "+++ RebelItems");
     }
 
-    //item name index for command completions (idek how to handle this better)
-    List<Item> allItems = Arrays.asList(
-            new foundersSword(),
-            new testItem(),
-            new harpoon(),
-            new chickenSword(),
-            new multishotBow(),
-            new vampireSword(),
-            new berserkerAxe(),
-            new tpDashSword(),
-            new randomPickaxe()
-    );
-
-    List<String> allItemsAsString = getAllItemsAsString();
+    public List<Item> getAllItems() {
+        List<Item> allItems = Arrays.asList(
+                new foundersSword(),
+                new testItem(),
+                new harpoon(),
+                new chickenSword(),
+                new multishotBow(),
+                new vampireSword(),
+                new berserkerAxe(),
+                new tpDashSword(),
+                new randomPickaxe()
+        );
+        return allItems;
+    }
 
     public List<String> getAllItemsAsString(){
         List<String> i = new ArrayList<>();
@@ -73,7 +80,7 @@ public final class RebelItems extends JavaPlugin {
 
         commandManager.getCommandCompletions().registerAsyncCompletion("items", c -> allItemsAsString);
 
-        commandManager.registerCommand(new ItemCommands(this, allItemsAsString, allItems).setExceptionHandler((command, registeredCommand, sender, args, t) -> {
+        commandManager.registerCommand(new ItemCommands(this, allItemsAsString, getAllItems()).setExceptionHandler((command, registeredCommand, sender, args, t) -> {
             sender.sendMessage(MessageType.ERROR, MessageKeys.ERROR_GENERIC_LOGGED);
             return true;
         }));
@@ -83,17 +90,16 @@ public final class RebelItems extends JavaPlugin {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if(label.equals("reload")) {
+        if(label.equalsIgnoreCase("rebelitems:reload")) {
             this.saveDefaultConfig();
             this.reloadConfig();
-            sender.sendMessage(ChatColor.RED + "RebelsLore Reloaded");
-            return true;
+            getServer().getConsoleSender().sendMessage(ChatColor.RED + "RebelsLore Reloaded");
+
+            registerCommands();
+
+            return false;
         }
         return false;
-    }
-
-    public static RebelItems getPlugin() {
-        return plugin;
     }
 
     @Override
