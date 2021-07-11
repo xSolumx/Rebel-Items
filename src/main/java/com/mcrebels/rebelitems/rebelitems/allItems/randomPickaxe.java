@@ -19,7 +19,9 @@ import static org.bukkit.Material.matchMaterial;
 
 public class randomPickaxe extends Item implements Listener {
     private ItemStack item;
-
+    private static double minChance = .1;
+    private static double maxChance = .5;
+    private double chance = .005;
     private final Integer customMetaID = 10;
     private final Component itemName = MiniMessage.markdown().parse("<gradient:#5e4fa2:#f79459>Gambler's Pickaxe</gradient>");
     private final Material itemMaterial = Material.NETHERITE_PICKAXE;

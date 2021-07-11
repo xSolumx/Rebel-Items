@@ -1,0 +1,15 @@
+# Configuration file for the custom items plugin
+#
+# Authors: xSolum and blackcobra987
+#
+# Each Custom Item has at least a display name that can be changed.
+# The items in the config file go in order of their index
+#
+# Note: existing items will not be modified by this file!
+# (Changing the chance of an event happening will not effect existing instances of that item)
+
+# Do not change the item config names!
+testitem:
+  displayname: "Hello Test!"
+  lore1: "This is a test"
+

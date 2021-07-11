@@ -40,7 +40,6 @@ public class ItemCommands extends BaseCommand{
                 player.getPlayer().getInventory().addItem(compareItems(item).getItem());
             }
         }
-        }
+    }
         // Command executed with desired parameters.
-
 }

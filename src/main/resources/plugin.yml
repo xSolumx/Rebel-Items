@@ -8,3 +8,4 @@ description: Adds Custom items
 commands:
   rebelitemgive:
   showgui:
+  reload:

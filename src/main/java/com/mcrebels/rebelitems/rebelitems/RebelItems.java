@@ -5,8 +5,12 @@ import co.aikar.commands.MessageType;
 import co.aikar.commands.PaperCommandManager;
 import com.mcrebels.rebelitems.rebelitems.allItems.*;
 import net.md_5.bungee.api.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -21,6 +25,7 @@ public final class RebelItems extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         plugin = this;
+        plugin.saveDefaultConfig();
         registerCommands();
 
         //load item event listeners
@@ -74,6 +79,21 @@ public final class RebelItems extends JavaPlugin {
         }));
 
 
+    }
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if(label.equals("reload")) {
+            this.saveDefaultConfig();
+            this.reloadConfig();
+            sender.sendMessage(ChatColor.RED + "RebelsLore Reloaded");
+            return true;
+        }
+        return false;
+    }
+
+    public static RebelItems getPlugin() {
+        return plugin;
     }
 
     @Override
