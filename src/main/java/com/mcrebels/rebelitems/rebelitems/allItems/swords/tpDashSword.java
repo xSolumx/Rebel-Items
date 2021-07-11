@@ -1,5 +1,6 @@
-package com.mcrebels.rebelitems.rebelitems.allItems;
+package com.mcrebels.rebelitems.rebelitems.allItems.swords;
 
+import com.mcrebels.rebelitems.rebelitems.allItems.Item;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Material;
@@ -20,7 +21,7 @@ public class tpDashSword extends Item implements Listener {
 
     private ItemStack item;
 
-    private final Integer customMetaID = 9;
+    private final Integer customMetaID = 3;
     private final Component itemName = MiniMessage.markdown().parse("<gradient:#5e4fa2:#f79459>Dash Sword</gradient>");
     private final Material itemMaterial = Material.NETHERITE_SWORD;
     private final List<Component> itemLore = Arrays.asList(

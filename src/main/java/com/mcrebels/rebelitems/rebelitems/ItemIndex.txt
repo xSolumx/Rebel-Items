@@ -1,9 +1,0 @@
-TestItem 1
-foundersSword 2
-chickenSword 3
-chickenbones 4
-harpoon 5
-multishotbow 6
-vampire sword 7
-berserker Axe 8
-tpDashSword 9

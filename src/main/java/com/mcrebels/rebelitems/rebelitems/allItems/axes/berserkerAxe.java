@@ -1,5 +1,6 @@
-package com.mcrebels.rebelitems.rebelitems.allItems;
+package com.mcrebels.rebelitems.rebelitems.allItems.axes;
 
+import com.mcrebels.rebelitems.rebelitems.allItems.Item;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Material;
