@@ -14,3 +14,12 @@ testitem:
   lore1: "This is a test"
   lore2: "Also a test"
 
+# Drops random blocks
+gamblerpickaxe:
+  displayname: "Random Blocks Pickaxe"
+  # Minimum chance for the pickaxe to initialize with (0 - 1)
+  minchance: .1
+  # Max chance (MUST be greater than minchance)
+  maxchance: .8
+  
+
