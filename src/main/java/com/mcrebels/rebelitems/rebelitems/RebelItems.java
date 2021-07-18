@@ -4,6 +4,15 @@ import co.aikar.commands.MessageKeys;
 import co.aikar.commands.MessageType;
 import co.aikar.commands.PaperCommandManager;
 import com.mcrebels.rebelitems.rebelitems.allItems.*;
+import com.mcrebels.rebelitems.rebelitems.allItems.axes.berserkerAxe;
+import com.mcrebels.rebelitems.rebelitems.allItems.bows.multishotBow;
+import com.mcrebels.rebelitems.rebelitems.allItems.misc_Paper.chickenBones;
+import com.mcrebels.rebelitems.rebelitems.allItems.misc_Paper.currency;
+import com.mcrebels.rebelitems.rebelitems.allItems.misc_Paper.token;
+import com.mcrebels.rebelitems.rebelitems.allItems.swords.chickenSword;
+import com.mcrebels.rebelitems.rebelitems.allItems.swords.foundersSword;
+import com.mcrebels.rebelitems.rebelitems.allItems.swords.tpDashSword;
+import com.mcrebels.rebelitems.rebelitems.allItems.swords.vampireSword;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -48,7 +57,9 @@ public final class RebelItems extends JavaPlugin {
             new vampireSword(),
             new berserkerAxe(),
             new tpDashSword(),
-            new randomPickaxe()
+            new chickenBones(),
+            new currency(),
+            new token()
     );
 
     List<String> allItemsAsString = getAllItemsAsString();
