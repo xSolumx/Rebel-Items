@@ -1,0 +1,8 @@
+target/maven-status/maven-compiler-plugin/compile/default-compile/
+target/
+target/classes
+target/generated-sources
+target/maven-archiver
+target/maven-status
+target/original-rebelsitems-1.1-SNAPSHOT.jar
+target/rebelsitems-1.1-SNAPSHOT.jar
