@@ -8,3 +8,4 @@ vampire sword 7
 berserker Axe 8
 tpDashSword 9
 gamblerPickaxe 10
+hastePickaxe 11

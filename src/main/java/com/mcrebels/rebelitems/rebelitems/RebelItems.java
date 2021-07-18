@@ -38,6 +38,8 @@ public final class RebelItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new berserkerAxe(), this);
         getServer().getPluginManager().registerEvents(new tpDashSword(), this);
         getServer().getPluginManager().registerEvents(new randomPickaxe(), this);
+        getServer().getPluginManager().registerEvents(new hastePickaxe(), this);
+
 
         //item name index for command completions (idek how to handle this better)
         allItems = getAllItems();
@@ -60,7 +62,8 @@ public final class RebelItems extends JavaPlugin {
                 new vampireSword(),
                 new berserkerAxe(),
                 new tpDashSword(),
-                new randomPickaxe()
+                new randomPickaxe(),
+                new hastePickaxe()
         );
         return allItems;
     }

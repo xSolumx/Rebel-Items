@@ -21,5 +21,14 @@ gamblerpickaxe:
   minchance: .1
   # Max chance (MUST be greater than minchance)
   maxchance: .8
-  
+hastepickaxe:
+  displayname: "Hasty Pickaxe"
+  # Minimum chance that the pickaxe could have to apply haste
+  minchance: .1
+  # Maximum chance that the pickaxe could have to apply haste
+  maxchance: .5
+  # What level haste should be granted to the player (1-255)
+  hastelevel: 1
+  # How many seconds of haste should be applied
+  hasteduration: 10
 

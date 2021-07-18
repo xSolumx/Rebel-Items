@@ -82,7 +82,6 @@ public class randomPickaxe extends Item implements Listener {
                 MiniMessage.markdown().parse("<gradient:yellow:blue>block in addition to the broken block.</gradient>"),
                 MiniMessage.markdown().parse("<gradient:yellow:blue>Drop chance: " + chance * 100 + "%</gradient>"));
         ItemMeta tMeta = item.getItemMeta();
-        NamespacedKey key = new NamespacedKey(plugin, "dropChance");
         tMeta.getPersistentDataContainer().set(dropChanceKey, PersistentDataType.DOUBLE, chance);
         tMeta.setCustomModelData(customMetaID);
         tMeta.lore(itemLore);
@@ -94,7 +93,7 @@ public class randomPickaxe extends Item implements Listener {
     public void reRollItem() {
         chance = (Math.random() * (maxChance - minChance) + minChance);
         chance = Math.floor(chance * 10000) / 10000;
-
+        updateChance(chance);
     }
 
     private void updateChance(double newChance) {
