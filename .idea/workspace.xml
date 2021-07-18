@@ -19,14 +19,31 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cecf6fb-822a-46b5-83be-8def78c58be3" name="Default Changelist" comment="Added some janky code">
+    <list default="true" id="5cecf6fb-822a-46b5-83be-8def78c58be3" name="Default Changelist" comment="hopefully this works&#10;- added utility class">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/axes/.ID index.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/bows/.ID index.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/misc_Paper/.ID index.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/misc_Paper/currency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/misc_Paper/token.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/.ID index.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/harpoon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/harpoon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/chickenSword.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/chickenSword.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/harpoon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/harpoon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/multishotBow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/multishotBow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/vampireSword.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/vampireSword.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/ItemIndex.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/RebelItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/RebelItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/berserkerAxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/axes/berserkerAxe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/chickenSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/chickenSword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/foundersSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/foundersSword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/misc/chickenBones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/misc_Paper/chickenBones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/multishotBow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/bows/multishotBow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/tpDashSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/tpDashSword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/vampireSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/vampireSword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/RebelItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/RebelItems.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/chickenSword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/foundersSword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/misc/chickenBones.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/allItems/vampireSword.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-rebelsitems-1.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-rebelsitems-1.1-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625607275093</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="hopefully this works&#10;- added utility class">
+      <created>1625609052883</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1625609052883</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -246,7 +270,8 @@
     <MESSAGE value="Updated dependencies and added vampire sword" />
     <MESSAGE value="Updated more dependencies" />
     <MESSAGE value="Added some janky code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some janky code" />
+    <MESSAGE value="hopefully this works&#10;- added utility class" />
+    <option name="LAST_COMMIT_MESSAGE" value="hopefully this works&#10;- added utility class" />
   </component>
   <component name="WindowStateProjectService">
     <state x="617" y="215" width="814" height="728" key="#Intentions" timestamp="1623872797753">
@@ -261,6 +286,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1623871198254" />
+    <state x="786" y="346" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1625761322689">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="786" y="346" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1625761322689" />
     <state x="830" y="260" key="#com.intellij.ide.util.MemberChooser" timestamp="1625603525461">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -273,10 +302,10 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="768" y="391" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2048.1112@0.0.2048.1112" timestamp="1625600809701" />
-    <state x="452" y="14" key="CommitChangelistDialog2" timestamp="1625607336731">
+    <state x="452" y="14" key="CommitChangelistDialog2" timestamp="1625694288418">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="452" y="14" key="CommitChangelistDialog2/0.0.2048.1112@0.0.2048.1112" timestamp="1625607336731" />
+    <state x="452" y="14" key="CommitChangelistDialog2/0.0.2048.1112@0.0.2048.1112" timestamp="1625694288418" />
     <state x="209" y="111" key="DiffContextDialog" timestamp="1624196358997">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -285,33 +314,33 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="805" y="311" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1623871138130" />
-    <state width="2005" height="290" key="GridCell.Tab.0.bottom" timestamp="1625608270081">
+    <state width="2005" height="290" key="GridCell.Tab.0.bottom" timestamp="1625771808306">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="290" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1625608270081" />
-    <state width="2005" height="290" key="GridCell.Tab.0.center" timestamp="1625608270080">
+    <state width="2005" height="290" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1625771808306" />
+    <state width="2005" height="290" key="GridCell.Tab.0.center" timestamp="1625771808306">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="290" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1625608270080" />
-    <state width="2005" height="290" key="GridCell.Tab.0.left" timestamp="1625608270080">
+    <state width="2005" height="290" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1625771808306" />
+    <state width="2005" height="290" key="GridCell.Tab.0.left" timestamp="1625771808306">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="290" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1625608270080" />
-    <state width="2005" height="290" key="GridCell.Tab.0.right" timestamp="1625608270081">
+    <state width="2005" height="290" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1625771808306" />
+    <state width="2005" height="290" key="GridCell.Tab.0.right" timestamp="1625771808306">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="2005" height="290" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1625608270081" />
+    <state width="2005" height="290" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1625771808306" />
     <state x="505" y="131" key="SettingsEditor" timestamp="1624195796901">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="505" y="131" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1624195796901" />
-    <state x="617" y="285" key="Vcs.Push.Dialog.v2" timestamp="1625607356897">
+    <state x="617" y="285" key="Vcs.Push.Dialog.v2" timestamp="1625694307797">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="617" y="285" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1625607356897" />
-    <state x="833" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1625608998631">
+    <state x="617" y="285" key="Vcs.Push.Dialog.v2/0.0.2048.1112@0.0.2048.1112" timestamp="1625694307797" />
+    <state x="833" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1625694236642">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="833" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1112@0.0.2048.1112" timestamp="1625608998631" />
+    <state x="833" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1112@0.0.2048.1112" timestamp="1625694236642" />
   </component>
 </project>
