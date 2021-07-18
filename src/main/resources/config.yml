@@ -14,6 +14,14 @@ testitem:
   lore1: "This is a test"
   lore2: "Also a test"
 
+# Lifesteal sword
+vampiresword:
+  displayname: "Vampire Sword"
+  # minimum amount of damage to life steal (0 - 1)
+  minpercent: .02
+  # maximum amount of damage to life steal (MUST be greater than minpercent)
+  maxpercent: .1
+
 # Drops random blocks
 gamblerpickaxe:
   displayname: "Random Blocks Pickaxe"
@@ -21,6 +29,8 @@ gamblerpickaxe:
   minchance: .1
   # Max chance (MUST be greater than minchance)
   maxchance: .8
+
+# Applies haste to the user
 hastepickaxe:
   displayname: "Hasty Pickaxe"
   # Minimum chance that the pickaxe could have to apply haste

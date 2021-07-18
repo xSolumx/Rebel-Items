@@ -75,7 +75,7 @@ public class randomPickaxe extends Item implements Listener {
     public ItemStack getItem(){
         item = new ItemStack(itemMaterial, 1);
         chance = (Math.random() * (maxChance - minChance) + minChance);
-        chance = Math.floor(chance * 10000) / 10000;
+        chance = Math.floor(chance * 1000) / 1000;
         itemLore = Arrays.asList(
                 MiniMessage.markdown().parse("<gradient:yellow:blue>===================</gradient>"),
                 MiniMessage.markdown().parse("<gradient:yellow:blue>Occasionally gives the user a random minecraft </gradient>"),
@@ -92,7 +92,7 @@ public class randomPickaxe extends Item implements Listener {
 
     public void reRollItem() {
         chance = (Math.random() * (maxChance - minChance) + minChance);
-        chance = Math.floor(chance * 10000) / 10000;
+        chance = Math.floor(chance * 1000) / 1000;
         updateChance(chance);
     }
 
