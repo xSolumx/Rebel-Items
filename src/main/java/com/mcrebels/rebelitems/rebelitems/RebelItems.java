@@ -8,6 +8,7 @@ import net.md_5.bungee.api.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -93,10 +94,13 @@ public final class RebelItems extends JavaPlugin {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if(label.equalsIgnoreCase("rebelitems:reload")) {
+        if(sender.hasPermission("rebelitems.reload") && label.equalsIgnoreCase("rebelitems:reload")) {
             this.saveDefaultConfig();
             this.reloadConfig();
-            getServer().getConsoleSender().sendMessage(ChatColor.RED + "RebelsLore Reloaded");
+            getServer().getConsoleSender().sendMessage(ChatColor.RED + "RebelItems Reloaded");
+            if(sender instanceof Player) {
+                sender.sendMessage(ChatColor.RED + "RebelItems Reloaded");
+            }
 
             registerCommands();
 
