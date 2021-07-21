@@ -9,6 +9,8 @@ import com.mcrebels.rebelitems.rebelitems.allItems.bows.multishotBow;
 import com.mcrebels.rebelitems.rebelitems.allItems.misc_Paper.chickenBones;
 import com.mcrebels.rebelitems.rebelitems.allItems.misc_Paper.currency;
 import com.mcrebels.rebelitems.rebelitems.allItems.misc_Paper.token;
+import com.mcrebels.rebelitems.rebelitems.allItems.pickaxes.hastePickaxe;
+import com.mcrebels.rebelitems.rebelitems.allItems.pickaxes.randomPickaxe;
 import com.mcrebels.rebelitems.rebelitems.allItems.swords.chickenSword;
 import com.mcrebels.rebelitems.rebelitems.allItems.swords.foundersSword;
 import com.mcrebels.rebelitems.rebelitems.allItems.swords.tpDashSword;
@@ -16,11 +18,9 @@ import com.mcrebels.rebelitems.rebelitems.allItems.swords.vampireSword;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -63,23 +63,24 @@ public final class RebelItems extends JavaPlugin {
     }
 
     //item name index for command completions (idek how to handle this better)
-    List<Item> allItems = Arrays.asList(
-            new foundersSword(),
-            new testItem(),
-            new harpoon(),
-            new chickenSword(),
-            new multishotBow(),
-            new vampireSword(),
-            new berserkerAxe(),
-            new tpDashSword(),
-            new chickenBones(),
-            new currency(),
-            new randomPickaxe(),
-            new hastePickaxe(),
-            new token()
-    );
-
-    List<String> allItemsAsString = getAllItemsAsString();
+    public List<Item> getAllItems() {
+        List<Item> allItems = Arrays.asList(
+                new foundersSword(),
+                new testItem(),
+                new harpoon(),
+                new chickenSword(),
+                new multishotBow(),
+                new vampireSword(),
+                new berserkerAxe(),
+                new tpDashSword(),
+                new chickenBones(),
+                new currency(),
+                new randomPickaxe(),
+                new hastePickaxe(),
+                new token()
+        );
+        return allItems;
+    };
 
     public List<String> getAllItemsAsString(){
         List<String> i = new ArrayList<>();

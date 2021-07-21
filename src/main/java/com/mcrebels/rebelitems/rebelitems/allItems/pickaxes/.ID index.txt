@@ -1,0 +1,2 @@
+1 gamblerPickaxe
+2 hastePickaxe
