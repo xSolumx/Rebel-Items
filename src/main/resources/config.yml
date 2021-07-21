@@ -1,0 +1,44 @@
+# Configuration file for the custom items plugin
+#
+# Authors: xSolum and blackcobra987
+#
+# Each Custom Item has at least a display name that can be changed.
+# The items in the config file go in order of their index
+#
+# Note: existing items will not be modified by this file!
+# (Changing the chance of an event happening will not effect existing instances of that item)
+
+# Do not change the item config names!
+testitem:
+  displayname: "Hello Test!"
+  lore1: "This is a test"
+  lore2: "Also a test"
+
+# Lifesteal sword
+vampiresword:
+  displayname: "Vampire Sword"
+  # minimum amount of damage to life steal (0 - 1)
+  minpercent: .02
+  # maximum amount of damage to life steal (MUST be greater than minpercent)
+  maxpercent: .1
+
+# Drops random blocks
+gamblerpickaxe:
+  displayname: "Random Blocks Pickaxe"
+  # Minimum chance for the pickaxe to initialize with (0 - 1)
+  minchance: .1
+  # Max chance (MUST be greater than minchance)
+  maxchance: .8
+
+# Applies haste to the user
+hastepickaxe:
+  displayname: "Hasty Pickaxe"
+  # Minimum chance that the pickaxe could have to apply haste
+  minchance: .1
+  # Maximum chance that the pickaxe could have to apply haste
+  maxchance: .5
+  # What level haste should be granted to the player (1-255)
+  hastelevel: 1
+  # How many seconds of haste should be applied
+  hasteduration: 10
+

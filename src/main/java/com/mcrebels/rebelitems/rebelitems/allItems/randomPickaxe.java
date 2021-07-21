@@ -1,15 +1,19 @@
 package com.mcrebels.rebelitems.rebelitems.allItems;
 
+import com.mcrebels.rebelitems.rebelitems.RebelItems;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.plugin.Plugin;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,38 +23,46 @@ import static org.bukkit.Material.matchMaterial;
 
 public class randomPickaxe extends Item implements Listener {
     private ItemStack item;
-
     private final Integer customMetaID = 10;
-    private final Component itemName = MiniMessage.markdown().parse("<gradient:#5e4fa2:#f79459>Gambler's Pickaxe</gradient>");
+    private final String configID = "gamblerpickaxe";
+    private final Component itemName;
     private final Material itemMaterial = Material.NETHERITE_PICKAXE;
     private final List<String> listOfLines;
-    private final List<Component> itemLore = Arrays.asList(
-            MiniMessage.markdown().parse("<gradient:yellow:blue>===================</gradient>"),
-            MiniMessage.markdown().parse("<gradient:yellow:blue>From the treasury of the Chicken Lord himself</gradient>"),
-            MiniMessage.markdown().parse("Occasionally gives the user a random minecraft block in"),
-            MiniMessage.markdown().parse("addition to the broken block."));
+    private final Plugin plugin = RebelItems.getPlugin(RebelItems.class);
+    private final NamespacedKey dropChanceKey = new NamespacedKey(plugin, "dropChance");
+    private List<Component> itemLore;
+    private static double minChance = .1;
+    private static double maxChance = .5;
+    private double chance;
 
     public randomPickaxe(){
-        item = new ItemStack(itemMaterial, 1);
+        minChance = plugin.getConfig().getDouble(configID + ".minchance");
+        maxChance = plugin.getConfig().getDouble(configID + ".maxchance");
+        itemName = MiniMessage.markdown().parse("<gradient:#5e4fa2:#f79459>" + plugin.getConfig().getString(configID + ".displayname") + "</gradient>");
         listOfLines = getMaterialList();
-        ItemMeta tMeta = item.getItemMeta();
-        tMeta.setCustomModelData(customMetaID);
-        tMeta.lore(itemLore);
-        tMeta.displayName(itemName);
-        item.setItemMeta(tMeta);
+        itemLore = Arrays.asList(
+                MiniMessage.markdown().parse(""));
     }
 
     @EventHandler
     private void onBlockBreak(BlockBreakEvent b){
-        if(b.getPlayer() != null) {
-            if(metaCheck(b.getPlayer(), customMetaID)) {
-                if(Math.random() < .005) {
-                    Player player = b.getPlayer();
-                    Location dropsLoc = b.getBlock().getLocation();
-                    Material randomMaterial;
-                    randomMaterial = matchMaterial(listOfLines.get((int)(Math.random() * listOfLines.size())));
-                    player.getWorld().dropItemNaturally(dropsLoc, new ItemStack(randomMaterial, 1));
-                }
+        if(metaCheck(b.getPlayer(), customMetaID)) {
+            double dropChance = b.getPlayer().getInventory().getItemInMainHand().getItemMeta()
+                    .getPersistentDataContainer().get(dropChanceKey, PersistentDataType.DOUBLE);
+            if(dropChance > maxChance) {
+                updateChance(maxChance);
+                dropChance = maxChance;
+            }
+            else if(dropChance < minChance) {
+                updateChance(minChance);
+                dropChance = minChance;
+            }
+            if(Math.random() < dropChance) {
+                Player player = b.getPlayer();
+                Location dropsLoc = b.getBlock().getLocation();
+                Material randomMaterial;
+                randomMaterial = matchMaterial(listOfLines.get((int)(Math.random() * listOfLines.size())));
+                player.getWorld().dropItemNaturally(dropsLoc, new ItemStack(randomMaterial, 1));
             }
         }
     }
@@ -61,7 +73,34 @@ public class randomPickaxe extends Item implements Listener {
     }
 
     public ItemStack getItem(){
+        item = new ItemStack(itemMaterial, 1);
+        chance = (Math.random() * (maxChance - minChance) + minChance);
+        chance = Math.floor(chance * 1000) / 1000;
+        itemLore = Arrays.asList(
+                MiniMessage.markdown().parse("<gradient:yellow:blue>===================</gradient>"),
+                MiniMessage.markdown().parse("<gradient:yellow:blue>Occasionally gives the user a random minecraft </gradient>"),
+                MiniMessage.markdown().parse("<gradient:yellow:blue>block in addition to the broken block.</gradient>"),
+                MiniMessage.markdown().parse("<gradient:yellow:blue>Drop chance: " + chance * 100 + "%</gradient>"));
+        ItemMeta tMeta = item.getItemMeta();
+        tMeta.getPersistentDataContainer().set(dropChanceKey, PersistentDataType.DOUBLE, chance);
+        tMeta.setCustomModelData(customMetaID);
+        tMeta.lore(itemLore);
+        tMeta.displayName(itemName);
+        item.setItemMeta(tMeta);
         return item;
+    }
+
+    public void reRollItem() {
+        chance = (Math.random() * (maxChance - minChance) + minChance);
+        chance = Math.floor(chance * 1000) / 1000;
+        updateChance(chance);
+    }
+
+    private void updateChance(double newChance) {
+        /*TODO: Update persistent data container in itemMeta
+        * (idk how we'll get the item yet)
+        * And update the item lore to display the new chance
+        */
     }
 
     private List<String> getMaterialList() {
@@ -69,4 +108,6 @@ public class randomPickaxe extends Item implements Listener {
 
         return materials;
     }
+
+
 }

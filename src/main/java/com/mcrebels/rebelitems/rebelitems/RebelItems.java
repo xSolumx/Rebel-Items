@@ -14,8 +14,13 @@ import com.mcrebels.rebelitems.rebelitems.allItems.swords.foundersSword;
 import com.mcrebels.rebelitems.rebelitems.allItems.swords.tpDashSword;
 import com.mcrebels.rebelitems.rebelitems.allItems.swords.vampireSword;
 import net.md_5.bungee.api.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -24,13 +29,14 @@ public final class RebelItems extends JavaPlugin {
 
     private static RebelItems plugin;
     private static PaperCommandManager commandManager;
-
+    List<Item> allItems;
+    List<String> allItemsAsString;
 
     @Override
     public void onEnable() {
         // Plugin startup logic
         plugin = this;
-        registerCommands();
+        this.saveDefaultConfig();
 
         //load item event listeners
         getServer().getPluginManager().registerEvents(new vampireSword(), this);
@@ -42,6 +48,15 @@ public final class RebelItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new berserkerAxe(), this);
         getServer().getPluginManager().registerEvents(new tpDashSword(), this);
         getServer().getPluginManager().registerEvents(new randomPickaxe(), this);
+        getServer().getPluginManager().registerEvents(new hastePickaxe(), this);
+
+
+        //item name index for command completions (idek how to handle this better)
+        allItems = getAllItems();
+
+        allItemsAsString = getAllItemsAsString();
+
+        registerCommands();
 
         //loaded message
         getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "+++ RebelItems");
@@ -59,6 +74,8 @@ public final class RebelItems extends JavaPlugin {
             new tpDashSword(),
             new chickenBones(),
             new currency(),
+            new randomPickaxe(),
+            new hastePickaxe(),
             new token()
     );
 
@@ -79,12 +96,29 @@ public final class RebelItems extends JavaPlugin {
 
         commandManager.getCommandCompletions().registerAsyncCompletion("items", c -> allItemsAsString);
 
-        commandManager.registerCommand(new ItemCommands(this, allItemsAsString, allItems).setExceptionHandler((command, registeredCommand, sender, args, t) -> {
+        commandManager.registerCommand(new ItemCommands(this, allItemsAsString, getAllItems()).setExceptionHandler((command, registeredCommand, sender, args, t) -> {
             sender.sendMessage(MessageType.ERROR, MessageKeys.ERROR_GENERIC_LOGGED);
             return true;
         }));
 
 
+    }
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if(sender.hasPermission("rebelitems.reload") && label.equalsIgnoreCase("rebelitems:reload")) {
+            this.saveDefaultConfig();
+            this.reloadConfig();
+            getServer().getConsoleSender().sendMessage(ChatColor.RED + "RebelItems Reloaded");
+            if(sender instanceof Player) {
+                sender.sendMessage(ChatColor.RED + "RebelItems Reloaded");
+            }
+
+            registerCommands();
+
+            return false;
+        }
+        return false;
     }
 
     @Override

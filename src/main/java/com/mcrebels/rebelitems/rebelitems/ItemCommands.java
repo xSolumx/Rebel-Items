@@ -4,6 +4,7 @@ import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
 import co.aikar.commands.bukkit.contexts.OnlinePlayer;
 import com.mcrebels.rebelitems.rebelitems.allItems.*;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.plugin.Plugin;
 
 import java.util.List;
@@ -40,7 +41,7 @@ public class ItemCommands extends BaseCommand{
                 player.getPlayer().getInventory().addItem(compareItems(item).getItem());
             }
         }
-        }
-        // Command executed with desired parameters.
+    }
 
+        // Command executed with desired parameters.
 }
