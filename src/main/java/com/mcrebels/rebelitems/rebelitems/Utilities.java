@@ -25,7 +25,7 @@ public class Utilities {
         String color = "";
         int percential = (int) (Math.random() * 101);
         double range = max - min;
-        double value = (double)percential * range + min;
+        double value = (double)percential * range + min * 100;
         BigDecimal bd = new BigDecimal(value);
         bd = bd.round(new MathContext(3));
         value = bd.doubleValue();
