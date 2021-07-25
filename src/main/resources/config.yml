@@ -46,7 +46,9 @@ hastepickaxe:
 boostelytra:
   displayname: "Rocket Powered Elytra"
   # Minimum velocity boost
-  minboost: .5
+  minboost: 1
   # Maximum velocity boost
-  maxboost: 2
+  maxboost: 3
+
+
 

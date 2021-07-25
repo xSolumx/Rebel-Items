@@ -54,14 +54,11 @@ public class boostElytra extends Item implements Listener {
     private void onPlayerToggleFlightEvent(EntityToggleGlideEvent f){
         if(f.getEntity() instanceof Player) {
             Player player = (Player) f.getEntity();
-            if(metaCheck(player, customMetaID)) {
-                getServer().getConsoleSender().sendMessage(ChatColor.DARK_AQUA + "We got Here");
+            if(metaCheck(player, customMetaID) && !player.isGliding()) {
                 double heightBoost = player.getInventory().getChestplate().getItemMeta()
                         .getPersistentDataContainer().get(heightBoostKey, PersistentDataType.DOUBLE);
                 Vector currentVel = player.getVelocity();
                 currentVel.setY(currentVel.getY() + heightBoost);
-                currentVel.setX(currentVel.getX() + heightBoost);
-                currentVel.setZ(currentVel.getZ() + heightBoost);
                 player.setVelocity(currentVel);
             }
         }
