@@ -22,28 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31409c15-1ed9-4242-a21c-bc99aca9043c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/axes/.ID index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/bows/.ID index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/misc_Paper/.ID index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/misc_Paper/currency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/misc_Paper/token.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/.ID index.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/RebelItems.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/ItemIndex.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/RebelItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/RebelItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/berserkerAxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/axes/berserkerAxe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/chickenSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/chickenSword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/foundersSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/foundersSword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/misc/chickenBones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/misc_Paper/chickenBones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/multishotBow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/bows/multishotBow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/tpDashSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/tpDashSword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/vampireSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/vampireSword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-rebelsitems-1.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-rebelsitems-1.1-SNAPSHOT.jar" afterDir="false" />
+    <list default="true" id="31409c15-1ed9-4242-a21c-bc99aca9043c" name="Default Changelist" comment="hopefully this works&#10;- added utility class">
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_destroystokyo_paper_paper_api_1_16_5_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_destroystokyo_paper_paper_api_1_16_5_R0_1_SNAPSHOT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_bukkit_1_15_2_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_bukkit_1_15_2_R0_1_SNAPSHOT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/Utilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/vampireSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/vampireSword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,13 +51,6 @@
             <value>
               <list>
                 <branch-info repo="$PROJECT_DIR$" source="master" />
-              </list>
-            </value>
-          </entry>
-          <entry type="REMOTE">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
               </list>
             </value>
           </entry>
@@ -172,12 +151,13 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5cecf6fb-822a-46b5-83be-8def78c58be3" name="Default Changelist" comment="" />
+      <changelist id="31409c15-1ed9-4242-a21c-bc99aca9043c" name="Default Changelist" comment="" />
       <created>1623806317365</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

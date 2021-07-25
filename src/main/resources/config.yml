@@ -18,7 +18,7 @@ testitem:
 vampiresword:
   displayname: "Vampire Sword"
   # minimum amount of damage to life steal (0 - 1)
-  minpercent: .02
+  minpercent: -.05
   # maximum amount of damage to life steal (MUST be greater than minpercent)
   maxpercent: .1
 
