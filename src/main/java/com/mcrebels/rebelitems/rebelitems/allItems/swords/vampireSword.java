@@ -2,6 +2,7 @@ package com.mcrebels.rebelitems.rebelitems.allItems.swords;
 
 import com.mcrebels.rebelitems.rebelitems.allItems.Item;
 import com.mcrebels.rebelitems.rebelitems.RebelItems;
+import com.sun.tools.javac.util.Pair;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.md_5.bungee.api.ChatColor;
@@ -23,8 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import static com.mcrebels.rebelitems.rebelitems.Utilities.getWorthColour;
-import static com.mcrebels.rebelitems.rebelitems.Utilities.metaCheck;
+import static com.mcrebels.rebelitems.rebelitems.Utilities.*;
 import static org.apache.commons.lang.math.RandomUtils.nextDouble;
 import static org.bukkit.Bukkit.getServer;
 
@@ -60,8 +60,8 @@ public class vampireSword extends Item implements Listener {
 
     public ItemStack getItem(){
         item = new ItemStack(itemMaterial, 1);
-        percent = (Math.random() * (maxPercent - minPercent) + minPercent);
-        percent = Math.floor(percent * 1000) / 1000;
+        Pair<String, Double> randomInfo = generateRandom(minPercent, maxPercent);
+        percent = randomInfo.snd;
 
         //useless code for bug testing aand shit
         DecimalFormat fmt = new DecimalFormat("#.#");
@@ -74,7 +74,7 @@ public class vampireSword extends Item implements Listener {
                 MiniMessage.markdown().parse("<gradient:green:blue>===================</gradient>"),
                 MiniMessage.markdown().parse("<gradient:green:blue>Grants the user a small amount of </gradient>"),
                 MiniMessage.markdown().parse("<gradient:green:blue>damage dealt as health</gradient>"),
-                MiniMessage.markdown().parse("<blue>Leech amount: " + getWorthColour(minPercent, maxPercent, percent)));
+                MiniMessage.markdown().parse("<blue>Leech amount: " + randomInfo.fst));
         ItemMeta tMeta = item.getItemMeta();
         tMeta.getPersistentDataContainer().set(leechPercentKey, PersistentDataType.DOUBLE, percent);
         tMeta.setCustomModelData(customMetaID);

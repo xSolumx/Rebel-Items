@@ -1,8 +1,11 @@
 package com.mcrebels.rebelitems.rebelitems;
 
+import com.sun.tools.javac.util.Pair;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.entity.Player;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
@@ -18,48 +21,51 @@ public class Utilities {
         return false;
     }
 
-    public static String getWorthColour(double min, double max, double num){
-        DecimalFormat fmt = new DecimalFormat("#.#");
-        fmt.setRoundingMode(RoundingMode.HALF_UP);
-        double percent = ((num-min)/(max-min))*100;
-        num = Double.parseDouble(fmt.format(num*100));
-        //#ff0101 #df3e3e #b96565 #875d5d //#555555// #577a57 #5a9f5a #4fc74c #15ff019
+    public static Pair<String, Double> generateRandom(double min, double max) {
+        String color = "";
+        int percential = (int) (Math.random() * 101);
+        double range = max - min;
+        double value = (double)percential * range + min;
+        BigDecimal bd = new BigDecimal(value);
+        bd = bd.round(new MathContext(3));
+        value = bd.doubleValue();
+        if (percential == 100){
+            color = "<#ffc400>";
+        }
+        else if (percential == 0){
+            color = "<#521717>";
+        }
+        else if (percential >= 90){
+            color = "<#15ff019>";
+        }
+        else if (percential >= 75){
+            color = "<#4fc74c>";
+        }
+        else if (percential >= 60){
+            color = "<#5a9f5a>";
+        }
+        else if (percential > 50){
+            color = "<#577a57>";
+        }
+        else if (percential == 50){
+            color = "<#555555>";
+        }
+        else if (percential < 50){
+            color = "<#875d5d>";
+        }
+        else if (percential < 40){
+            color = "<#b96565>";
+        }
+        else if (percential < 25){
+            color = "<#df3e3e>";
+        }
+        else if (percential < 10){
+            color = "<#ff0101>";
+        }
+        color += value + "%";
+        value /= 100;
 
-        String toReturn = ""+num;
-        if (percent == 100){
-            toReturn = "<#ffc400>"+num;
-        }
-        else if (percent == 0){
-            toReturn = "<#521717>"+num;
-        }
-        else if (percent >= 90){
-            toReturn = "<#15ff019>"+num;
-        }
-        else if (percent >= 75){
-            toReturn = "<#4fc74c>"+num;
-        }
-        else if (percent >= 60){
-            toReturn = "<#5a9f5a>"+num;
-        }
-        else if (percent > 50){
-            toReturn = "<#577a57>"+num;
-        }
-        else if (percent == 50){
-            toReturn = "<#555555>"+num;
-        }
-        else if (percent < 50){
-            toReturn = "<#875d5d>"+num;
-        }
-        else if (percent < 40){
-            toReturn = "<#b96565>"+num;
-        }
-        else if (percent < 25){
-            toReturn = "<#df3e3e>"+num;
-        }
-        else if (percent < 10){
-            toReturn = "<#ff0101>"+num;
-        }
-        return toReturn;
+        Pair<String, Double> pair = new Pair<String, Double>(color, value);
+        return pair;
     }
-
 }
