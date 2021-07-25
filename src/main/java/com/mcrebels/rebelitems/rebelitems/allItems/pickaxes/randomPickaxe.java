@@ -2,6 +2,7 @@ package com.mcrebels.rebelitems.rebelitems.allItems.pickaxes;
 
 import com.mcrebels.rebelitems.rebelitems.RebelItems;
 import com.mcrebels.rebelitems.rebelitems.allItems.Item;
+import com.sun.tools.javac.util.Pair;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Location;
@@ -19,6 +20,7 @@ import org.bukkit.plugin.Plugin;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.mcrebels.rebelitems.rebelitems.Utilities.generateRandom;
 import static com.mcrebels.rebelitems.rebelitems.Utilities.metaCheck;
 import static org.bukkit.Material.matchMaterial;
 
@@ -75,13 +77,13 @@ public class randomPickaxe extends Item implements Listener {
 
     public ItemStack getItem(){
         item = new ItemStack(itemMaterial, 1);
-        chance = (Math.random() * (maxChance - minChance) + minChance);
-        chance = Math.floor(chance * 1000) / 1000;
+        Pair<String, Double> pair = generateRandom(minChance, maxChance);
+        chance = pair.snd;
         itemLore = Arrays.asList(
                 MiniMessage.markdown().parse("<gradient:yellow:blue>===================</gradient>"),
                 MiniMessage.markdown().parse("<gradient:yellow:blue>Occasionally gives the user a random minecraft </gradient>"),
                 MiniMessage.markdown().parse("<gradient:yellow:blue>block in addition to the broken block.</gradient>"),
-                MiniMessage.markdown().parse("<gradient:yellow:blue>Drop chance: " + chance * 100 + "%</gradient>"));
+                MiniMessage.markdown().parse("<yellow>Drop chance: " + pair.fst));
         ItemMeta tMeta = item.getItemMeta();
         tMeta.getPersistentDataContainer().set(dropChanceKey, PersistentDataType.DOUBLE, chance);
         tMeta.setCustomModelData(customMetaID);
@@ -92,6 +94,7 @@ public class randomPickaxe extends Item implements Listener {
     }
 
     public void reRollItem() {
+        //NEEDS UPDATING
         chance = (Math.random() * (maxChance - minChance) + minChance);
         chance = Math.floor(chance * 1000) / 1000;
         updateChance(chance);

@@ -2,6 +2,7 @@ package com.mcrebels.rebelitems.rebelitems.allItems.pickaxes;
 
 import com.mcrebels.rebelitems.rebelitems.RebelItems;
 import com.mcrebels.rebelitems.rebelitems.allItems.Item;
+import com.sun.tools.javac.util.Pair;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Material;
@@ -20,6 +21,7 @@ import org.bukkit.potion.PotionEffectType;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.mcrebels.rebelitems.rebelitems.Utilities.generateRandom;
 import static com.mcrebels.rebelitems.rebelitems.Utilities.metaCheck;
 
 public class hastePickaxe extends Item implements Listener {
@@ -75,12 +77,12 @@ public class hastePickaxe extends Item implements Listener {
 
     public ItemStack getItem(){
         item = new ItemStack(itemMaterial, 1);
-        chance = (Math.random() * (maxChance - minChance) + minChance);
-        chance = Math.floor(chance * 1000) / 1000;
+        Pair<String, Double> pair = generateRandom(minChance, maxChance);
+        chance = pair.snd;
         itemLore = Arrays.asList(
                 MiniMessage.markdown().parse("<gradient:yellow:blue>===================</gradient>"),
                 MiniMessage.markdown().parse("<gradient:yellow:blue>Occasionally allows the user to mine faster!</gradient>"),
-                MiniMessage.markdown().parse("<gradient:yellow:blue>Haste chance: " + chance * 100 + "%</gradient>"));
+                MiniMessage.markdown().parse("<yellow>Haste chance: " + pair.fst));
         ItemMeta tMeta = item.getItemMeta();
         tMeta.getPersistentDataContainer().set(hasteChanceKey, PersistentDataType.DOUBLE, chance);
         tMeta.setCustomModelData(customMetaID);
@@ -91,6 +93,7 @@ public class hastePickaxe extends Item implements Listener {
     }
 
     public void reRollItem() {
+        //NEEDS UPDATING
         chance = (Math.random() * (maxChance - minChance) + minChance);
         chance = Math.floor(chance * 1000) / 1000;
         updateChance(chance);
