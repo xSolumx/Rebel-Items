@@ -42,3 +42,11 @@ hastepickaxe:
   # How many seconds of haste should be applied
   hasteduration: 10
 
+# Gives the user a boost when they initialize their elytra
+boostelytra:
+  displayname: "Rocket Powered Elytra"
+  # Minimum velocity boost
+  minboost: .5
+  # Maximum velocity boost
+  maxboost: 2
+

@@ -82,7 +82,7 @@ public class hastePickaxe extends Item implements Listener {
         itemLore = Arrays.asList(
                 MiniMessage.markdown().parse("<gradient:yellow:blue>===================</gradient>"),
                 MiniMessage.markdown().parse("<gradient:yellow:blue>Occasionally allows the user to mine faster!</gradient>"),
-                MiniMessage.markdown().parse("<yellow>Haste chance: " + pair.fst));
+                MiniMessage.markdown().parse("<yellow>Haste chance: " + pair.fst + "%"));
         ItemMeta tMeta = item.getItemMeta();
         tMeta.getPersistentDataContainer().set(hasteChanceKey, PersistentDataType.DOUBLE, chance);
         tMeta.setCustomModelData(customMetaID);

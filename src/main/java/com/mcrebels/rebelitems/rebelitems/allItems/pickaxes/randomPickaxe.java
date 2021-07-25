@@ -83,7 +83,7 @@ public class randomPickaxe extends Item implements Listener {
                 MiniMessage.markdown().parse("<gradient:yellow:blue>===================</gradient>"),
                 MiniMessage.markdown().parse("<gradient:yellow:blue>Occasionally gives the user a random minecraft </gradient>"),
                 MiniMessage.markdown().parse("<gradient:yellow:blue>block in addition to the broken block.</gradient>"),
-                MiniMessage.markdown().parse("<yellow>Drop chance: " + pair.fst));
+                MiniMessage.markdown().parse("<yellow>Drop chance: " + pair.fst + "%"));
         ItemMeta tMeta = item.getItemMeta();
         tMeta.getPersistentDataContainer().set(dropChanceKey, PersistentDataType.DOUBLE, chance);
         tMeta.setCustomModelData(customMetaID);

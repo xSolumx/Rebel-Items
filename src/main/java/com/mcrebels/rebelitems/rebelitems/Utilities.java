@@ -62,7 +62,7 @@ public class Utilities {
         else if (percential < 10){
             color = "<#ff0101>";
         }
-        color += value + "%";
+        color += value;
         value /= 100;
 
         Pair<String, Double> pair = new Pair<String, Double>(color, value);

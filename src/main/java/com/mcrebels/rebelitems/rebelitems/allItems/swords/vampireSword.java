@@ -74,7 +74,7 @@ public class vampireSword extends Item implements Listener {
                 MiniMessage.markdown().parse("<gradient:green:blue>===================</gradient>"),
                 MiniMessage.markdown().parse("<gradient:green:blue>Grants the user a small amount of </gradient>"),
                 MiniMessage.markdown().parse("<gradient:green:blue>damage dealt as health</gradient>"),
-                MiniMessage.markdown().parse("<blue>Leech amount: " + randomInfo.fst));
+                MiniMessage.markdown().parse("<blue>Leech amount: " + randomInfo.fst + "%"));
         ItemMeta tMeta = item.getItemMeta();
         tMeta.getPersistentDataContainer().set(leechPercentKey, PersistentDataType.DOUBLE, percent);
         tMeta.setCustomModelData(customMetaID);
