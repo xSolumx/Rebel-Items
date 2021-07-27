@@ -56,5 +56,10 @@ founderssword:
   mingold: 2
   maxgold: 15
 
+multishotbow:
+  displayname: "Multishot Bow"
+  minarrowamount: 1
+  maxarrowamount: 10
+
 
 

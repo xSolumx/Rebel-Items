@@ -14,6 +14,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityToggleGlideEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
+import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
@@ -54,7 +55,7 @@ public class boostElytra extends Item implements Listener {
     private void onPlayerToggleFlightEvent(EntityToggleGlideEvent f){
         if(f.getEntity() instanceof Player) {
             Player player = (Player) f.getEntity();
-            if(metaCheck(player, customMetaID) && !player.isGliding()) {
+            if(metaCheck(player, customMetaID) && isSneaking) {
                 double heightBoost = player.getInventory().getChestplate().getItemMeta()
                         .getPersistentDataContainer().get(heightBoostKey, PersistentDataType.DOUBLE);
                 Vector currentVel = player.getVelocity();
@@ -62,6 +63,12 @@ public class boostElytra extends Item implements Listener {
                 player.setVelocity(currentVel);
             }
         }
+    }
+    private boolean isSneaking = false;
+
+    @EventHandler
+    public void onCrouch(PlayerToggleSneakEvent e){
+        isSneaking = e.isSneaking();
     }
 
     @Override
