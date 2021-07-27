@@ -17,19 +17,30 @@ import com.mcrebels.rebelitems.rebelitems.allItems.swords.foundersSword;
 import com.mcrebels.rebelitems.rebelitems.allItems.swords.tpDashSword;
 import com.mcrebels.rebelitems.rebelitems.allItems.swords.vampireSword;
 import net.md_5.bungee.api.ChatColor;
+import net.milkbowl.vault.chat.Chat;
+import net.milkbowl.vault.economy.Economy;
+import net.milkbowl.vault.permission.Permission;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Logger;
 
 public final class RebelItems extends JavaPlugin {
 
     private static RebelItems plugin;
     private static PaperCommandManager commandManager;
+
+    private static final Logger log = Logger.getLogger("Minecraft");
+    private static Economy econ = null;
+    private static Permission perms = null;
+    private static Chat chat = null;
+
     List<Item> allItems;
     List<String> allItemsAsString;
 
@@ -38,6 +49,15 @@ public final class RebelItems extends JavaPlugin {
         // Plugin startup logic
         plugin = this;
         this.saveDefaultConfig();
+
+        //vault support
+        if (!setupEconomy() ) {
+            log.severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+        setupPermissions();
+        setupChat();
 
         //load item event listeners
         getServer().getPluginManager().registerEvents(new vampireSword(), this);
@@ -51,6 +71,12 @@ public final class RebelItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new randomPickaxe(), this);
         getServer().getPluginManager().registerEvents(new hastePickaxe(), this);
         getServer().getPluginManager().registerEvents(new boostElytra(), this);
+
+        getServer().getPluginManager().registerEvents(new currency(), this);
+
+        getServer().getPluginManager().registerEvents(new reRollGUI(), this);
+
+        getCommand("showgui").setExecutor(new reRollGUI());
 
 
         //item name index for command completions (idek how to handle this better)
@@ -125,10 +151,47 @@ public final class RebelItems extends JavaPlugin {
         return false;
     }
 
+    private boolean setupEconomy() {
+        if (getServer().getPluginManager().getPlugin("Vault") == null) {
+            return false;
+        }
+        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
+        if (rsp == null) {
+            return false;
+        }
+        econ = rsp.getProvider();
+        return econ != null;
+    }
+
+    private boolean setupChat() {
+        RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
+        chat = rsp.getProvider();
+        return chat != null;
+    }
+
+    private boolean setupPermissions() {
+        RegisteredServiceProvider<Permission> rsp = getServer().getServicesManager().getRegistration(Permission.class);
+        perms = rsp.getProvider();
+        return perms != null;
+    }
+    public static Economy getEconomy() {
+        return econ;
+    }
+
+    public static Permission getPermissions() {
+        return perms;
+    }
+
+    public static Chat getChat() {
+        return chat;
+    }
+
     @Override
     public void onDisable() {
         // Plugin shutdown logic
         getServer().getConsoleSender().sendMessage(ChatColor.RED + "--- RebelItems");
+        log.info(String.format("[%s] Disabled Version %s", getDescription().getName(), getDescription().getVersion()));
+
 
     }
 

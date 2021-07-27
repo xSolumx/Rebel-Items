@@ -23,13 +23,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31409c15-1ed9-4242-a21c-bc99aca9043c" name="Default Changelist" comment="hopefully this works&#10;- added utility class">
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_destroystokyo_paper_paper_api_1_16_5_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_destroystokyo_paper_paper_api_1_16_5_R0_1_SNAPSHOT.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_bukkit_1_15_2_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_bukkit_1_15_2_R0_1_SNAPSHOT.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_MilkBowl_VaultAPI_1_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_papermc_paper_paper_api_1_17_1_R0_1_SNAPSHOT.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__it_unimi_dsi_fastutil_8_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_14_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/Pair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/reRollGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/RebelsItems.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RebelsItems.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_destroystokyo_paper_paper_api_1_16_5_R0_1_SNAPSHOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_api_4_7_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_api_4_8_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_key_4_7_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_key_4_8_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_text_serializer_gson_4_7_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_text_serializer_gson_4_8_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_text_serializer_legacy_4_7_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_text_serializer_legacy_4_8_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_text_serializer_plain_4_7_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_text_serializer_plain_4_8_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_11_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_10_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_20_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_21_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_analysis_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_analysis_9_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_commons_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_commons_9_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_tree_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_tree_9_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_26.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_27.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_28.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/RebelItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/RebelItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/Utilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/misc_Items/boostElytra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/misc_Items/boostElytra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/misc_Paper/currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/misc_Paper/currency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/pickaxes/hastePickaxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/pickaxes/hastePickaxe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/pickaxes/randomPickaxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/pickaxes/randomPickaxe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/foundersSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/foundersSword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/vampireSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/swords/vampireSword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mcrebels/rebelitems/rebelitems/allItems/testGUI.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/RebelItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mcrebels/rebelitems/rebelitems/RebelItems.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

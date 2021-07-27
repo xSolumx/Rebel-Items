@@ -1,6 +1,5 @@
 package com.mcrebels.rebelitems.rebelitems;
 
-import com.sun.tools.javac.util.Pair;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.entity.Player;
 

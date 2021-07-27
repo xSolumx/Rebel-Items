@@ -1,8 +1,8 @@
 package com.mcrebels.rebelitems.rebelitems.allItems.pickaxes;
 
+import com.mcrebels.rebelitems.rebelitems.Pair;
 import com.mcrebels.rebelitems.rebelitems.RebelItems;
 import com.mcrebels.rebelitems.rebelitems.allItems.Item;
-import com.sun.tools.javac.util.Pair;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Material;
@@ -78,11 +78,11 @@ public class hastePickaxe extends Item implements Listener {
     public ItemStack getItem(){
         item = new ItemStack(itemMaterial, 1);
         Pair<String, Double> pair = generateRandom(minChance, maxChance);
-        chance = pair.snd;
+        chance = pair.getSecond();
         itemLore = Arrays.asList(
                 MiniMessage.markdown().parse("<gradient:yellow:blue>===================</gradient>"),
                 MiniMessage.markdown().parse("<gradient:yellow:blue>Occasionally allows the user to mine faster!</gradient>"),
-                MiniMessage.markdown().parse("<yellow>Haste chance: " + pair.fst + "%"));
+                MiniMessage.markdown().parse("<yellow>Haste chance: " + pair.getFirst() + "%"));
         ItemMeta tMeta = item.getItemMeta();
         tMeta.getPersistentDataContainer().set(hasteChanceKey, PersistentDataType.DOUBLE, chance);
         tMeta.setCustomModelData(customMetaID);

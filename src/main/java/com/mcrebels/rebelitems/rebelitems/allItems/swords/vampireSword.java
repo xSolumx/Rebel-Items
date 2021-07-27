@@ -1,8 +1,8 @@
 package com.mcrebels.rebelitems.rebelitems.allItems.swords;
 
+import com.mcrebels.rebelitems.rebelitems.Pair;
 import com.mcrebels.rebelitems.rebelitems.allItems.Item;
 import com.mcrebels.rebelitems.rebelitems.RebelItems;
-import com.sun.tools.javac.util.Pair;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.md_5.bungee.api.ChatColor;
@@ -61,7 +61,7 @@ public class vampireSword extends Item implements Listener {
     public ItemStack getItem(){
         item = new ItemStack(itemMaterial, 1);
         Pair<String, Double> randomInfo = generateRandom(minPercent, maxPercent);
-        percent = randomInfo.snd;
+        percent = randomInfo.getSecond();
 
         //useless code for bug testing aand shit
         DecimalFormat fmt = new DecimalFormat("#.#");
@@ -74,7 +74,7 @@ public class vampireSword extends Item implements Listener {
                 MiniMessage.markdown().parse("<gradient:green:blue>===================</gradient>"),
                 MiniMessage.markdown().parse("<gradient:green:blue>Grants the user a small amount of </gradient>"),
                 MiniMessage.markdown().parse("<gradient:green:blue>damage dealt as health</gradient>"),
-                MiniMessage.markdown().parse("<blue>Leech amount: " + randomInfo.fst + "%"));
+                MiniMessage.markdown().parse("<blue>Leech amount: " + randomInfo.getFirst() + "%"));
         ItemMeta tMeta = item.getItemMeta();
         tMeta.getPersistentDataContainer().set(leechPercentKey, PersistentDataType.DOUBLE, percent);
         tMeta.setCustomModelData(customMetaID);

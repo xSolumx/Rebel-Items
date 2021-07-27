@@ -18,9 +18,9 @@ testitem:
 vampiresword:
   displayname: "Vampire Sword"
   # minimum amount of damage to life steal (0 - 1)
-  minpercent: -.05
+  minpercent: -.15
   # maximum amount of damage to life steal (MUST be greater than minpercent)
-  maxpercent: .1
+  maxpercent: .15
 
 # Drops random blocks
 gamblerpickaxe:
@@ -49,6 +49,12 @@ boostelytra:
   minboost: 1
   # Maximum velocity boost
   maxboost: 3
+
+ #Gives the player gold on every kill
+founderssword:
+  displayname: "<gradient:#5e4fa2:#f79459>Sword of the Founder</gradient>"
+  mingold: 2
+  maxgold: 15
 
 
 

@@ -1,8 +1,8 @@
 package com.mcrebels.rebelitems.rebelitems.allItems.pickaxes;
 
+import com.mcrebels.rebelitems.rebelitems.Pair;
 import com.mcrebels.rebelitems.rebelitems.RebelItems;
 import com.mcrebels.rebelitems.rebelitems.allItems.Item;
-import com.sun.tools.javac.util.Pair;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Location;
@@ -78,12 +78,12 @@ public class randomPickaxe extends Item implements Listener {
     public ItemStack getItem(){
         item = new ItemStack(itemMaterial, 1);
         Pair<String, Double> pair = generateRandom(minChance, maxChance);
-        chance = pair.snd;
+        chance = pair.getSecond();
         itemLore = Arrays.asList(
                 MiniMessage.markdown().parse("<gradient:yellow:blue>===================</gradient>"),
                 MiniMessage.markdown().parse("<gradient:yellow:blue>Occasionally gives the user a random minecraft </gradient>"),
                 MiniMessage.markdown().parse("<gradient:yellow:blue>block in addition to the broken block.</gradient>"),
-                MiniMessage.markdown().parse("<yellow>Drop chance: " + pair.fst + "%"));
+                MiniMessage.markdown().parse("<yellow>Drop chance: " + pair.getFirst() + "%"));
         ItemMeta tMeta = item.getItemMeta();
         tMeta.getPersistentDataContainer().set(dropChanceKey, PersistentDataType.DOUBLE, chance);
         tMeta.setCustomModelData(customMetaID);

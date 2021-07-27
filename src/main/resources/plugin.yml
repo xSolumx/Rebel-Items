@@ -1,9 +1,10 @@
 name: RebelItems
 version: ${project.version}
 main: com.mcrebels.rebelitems.rebelitems.RebelItems
-api-version: 1.16
+api-version: 1.17
 authors: [xSolum, blackcobra987]
 description: Adds Custom items
+depend: [Vault, Essentials]
 
 commands:
   rebelitemgive:

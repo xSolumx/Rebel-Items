@@ -1,8 +1,8 @@
 package com.mcrebels.rebelitems.rebelitems.allItems.misc_Items;
 
+import com.mcrebels.rebelitems.rebelitems.Pair;
 import com.mcrebels.rebelitems.rebelitems.RebelItems;
 import com.mcrebels.rebelitems.rebelitems.allItems.Item;
-import com.sun.tools.javac.util.Pair;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.md_5.bungee.api.ChatColor;
@@ -72,11 +72,11 @@ public class boostElytra extends Item implements Listener {
     public ItemStack getItem(){
         item = new ItemStack(itemMaterial, 1);
         Pair<String, Double> pair = generateRandom(minHeight, maxHeight);
-        height = pair.snd;
+        height = pair.getSecond();
         itemLore = Arrays.asList(
                 MiniMessage.markdown().parse("<gradient:yellow:blue>===================</gradient>"),
                 MiniMessage.markdown().parse("<gradient:yellow:blue>Gives the user a boost when they launch!</gradient>"),
-                MiniMessage.markdown().parse("<yellow>Velocity Boost: " + pair.fst));
+                MiniMessage.markdown().parse("<yellow>Velocity Boost: " + pair.getFirst()));
         ItemMeta tMeta = item.getItemMeta();
         tMeta.getPersistentDataContainer().set(heightBoostKey, PersistentDataType.DOUBLE, height);
         tMeta.setCustomModelData(customMetaID);

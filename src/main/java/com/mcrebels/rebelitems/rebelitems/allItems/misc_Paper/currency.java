@@ -1,16 +1,25 @@
 package com.mcrebels.rebelitems.rebelitems.allItems.misc_Paper;
 
+import com.mcrebels.rebelitems.rebelitems.RebelItems;
 import com.mcrebels.rebelitems.rebelitems.allItems.Item;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import net.milkbowl.vault.economy.EconomyResponse;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class currency extends Item {
+import static com.mcrebels.rebelitems.rebelitems.Utilities.metaCheck;
+
+public class currency extends Item implements Listener {
 
     private ItemStack item;
 
@@ -49,5 +58,27 @@ public class currency extends Item {
     public ItemStack getItem()
     {
         return item;
+    }
+
+    @EventHandler
+    public void onPickup(EntityPickupItemEvent e){
+        if (e.getEntity() instanceof Player){
+            if (e.getItem().getItemStack().hasItemMeta()){
+                if (e.getItem().getItemStack().getItemMeta().hasCustomModelData()){
+                    if (e.getItem().getItemStack().getItemMeta().getCustomModelData() == customMetaID){
+                        Player player = (Player)e.getEntity();
+                        EconomyResponse r = RebelItems.getEconomy().depositPlayer(player, e.getItem().getItemStack().getAmount());
+                        e.setCancelled(true);
+                        e.getItem().remove();
+                        if(r.transactionSuccess()) {
+                            player.sendMessage(String.format("+ %s", RebelItems.getEconomy().format(r.amount), RebelItems.getEconomy().format(r.balance)));
+                        } else {
+                            player.sendMessage(String.format("An error occured: %s", r.errorMessage));
+                        }
+
+                    }
+                }
+            }
+        }
     }
 }
