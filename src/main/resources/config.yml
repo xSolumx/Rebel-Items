@@ -56,10 +56,17 @@ founderssword:
   mingold: 2
   maxgold: 15
 
+# Sometimes fires multiple arrows
 multishotbow:
   displayname: "Multishot Bow"
   minarrowamount: 1
   maxarrowamount: 10
+
+# Breaks multiple logs in a tree
+treefelleraxe:
+  displayname: "Lumberjack's Axe"
+  minlogs: 5
+  maxlogs: 15
 
 
 

@@ -72,7 +72,7 @@ public class Utilities {
         public static Pair<String, Integer> generateRandomInt(Integer min, Integer max) {
         String color = "";
         Integer value = min + (int)(Math.random() * ((max - min) + 1));
-        Double percentile = (double) (((double)(value - min) / (double)(max - min)) * 100);
+        Double percentile = (((double)(value - min) / (double)(max - min)) * 100);
         if (percentile == 100){
             color = "<#ffc400>";
         }

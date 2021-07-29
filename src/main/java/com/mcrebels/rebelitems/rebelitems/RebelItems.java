@@ -5,6 +5,7 @@ import co.aikar.commands.MessageType;
 import co.aikar.commands.PaperCommandManager;
 import com.mcrebels.rebelitems.rebelitems.allItems.*;
 import com.mcrebels.rebelitems.rebelitems.allItems.axes.berserkerAxe;
+import com.mcrebels.rebelitems.rebelitems.allItems.axes.treefellerAxe;
 import com.mcrebels.rebelitems.rebelitems.allItems.bows.multishotBow;
 import com.mcrebels.rebelitems.rebelitems.allItems.misc_Items.boostElytra;
 import com.mcrebels.rebelitems.rebelitems.allItems.misc_Paper.chickenBones;
@@ -71,6 +72,7 @@ public final class RebelItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new randomPickaxe(), this);
         getServer().getPluginManager().registerEvents(new hastePickaxe(), this);
         getServer().getPluginManager().registerEvents(new boostElytra(), this);
+        getServer().getPluginManager().registerEvents(new treefellerAxe(), this);
 
         getServer().getPluginManager().registerEvents(new currency(), this);
 
@@ -106,6 +108,7 @@ public final class RebelItems extends JavaPlugin {
                 new randomPickaxe(),
                 new hastePickaxe(),
                 new boostElytra(),
+                new treefellerAxe(),
                 new token()
         );
         return allItems;
