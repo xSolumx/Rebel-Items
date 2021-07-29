@@ -21,10 +21,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 import static com.mcrebels.rebelitems.rebelitems.Utilities.*;
 import static org.bukkit.Bukkit.getServer;
@@ -69,35 +66,42 @@ public class treefellerAxe extends Item implements Listener {
                 blocks.add(b.getBlock());
                 while(blocks.isEmpty() == false) {
                     --logCount;
-                    Block currBlock = blocks.poll();
-                    if(currBlock != b.getBlock()) {
-                        currBlock.breakNaturally();
+                    Block currBlock = blocks.peek();
+                    currBlock.breakNaturally();
+                    //Adding adjacent log blocks with blockFace values
+                    for(int face = 0; face < BlockFace.values().length; ++face) {
+                        if(isLog(currBlock.getRelative(BlockFace.values()[face]).getType()) &&
+                                !blocks.contains(currBlock.getRelative(BlockFace.values()[face])) &&
+                                currBlock.getRelative(BlockFace.values()[face]) != b.getBlock()) {
+                            blocks.add(currBlock.getRelative(BlockFace.values()[face]));
+                        }
                     }
-                    //Adding adjacent log blocks
-                    if(isLog(currBlock.getRelative(BlockFace.NORTH).getType()) &&
-                            !blocks.contains(currBlock.getRelative(BlockFace.NORTH))) {
-                        blocks.add(currBlock.getRelative(BlockFace.NORTH));
-                        getServer().getConsoleSender().sendMessage(ChatColor.BLUE + "North Added");
+                    //Adding remaining adjacent log blocks
+                    int x = 0, y = 0, z = 0;
+                    for(int diag = 0; diag < 16; ++diag) {
+                        if(diag == 0) { x = 1; y = 1 ; z = 0; }
+                        else if(diag == 1) { x = 1; y = 1 ; z = 1; }
+                        else if(diag == 2) { x = 0; y = 1 ; z = 1; }
+                        else if(diag == 3) { x = -1; y = 1 ; z = 0; }
+                        else if(diag == 4) { x = -1; y = 1 ; z = 1; }
+                        else if(diag == 5) { x = -1; y = 1 ; z = -1; }
+                        else if(diag == 6) { x = 0; y = 1 ; z = -1; }
+                        else if(diag == 7) { x = 1; y = 1 ; z = -1; }
+                        else if(diag == 8) { x = 1; y = -1 ; z = 0; }
+                        else if(diag == 9) { x = 1; y =-1 ; z = 1; }
+                        else if(diag == 10) { x = 0; y = -1 ; z = 1; }
+                        else if(diag == 11) { x = -1; y = -1 ; z = 0; }
+                        else if(diag == 12) { x = -1; y = -1 ; z = 1; }
+                        else if(diag == 13) { x = -1; y = -1 ; z = -1; }
+                        else if(diag == 14) { x = 0; y = -1 ; z = -1; }
+                        else if(diag == 15) { x = 1; y = -1 ; z = -1; }
+                        if(isLog(currBlock.getRelative(x, y, z).getType()) &&
+                                !blocks.contains(currBlock.getRelative(x, y, z)) &&
+                                currBlock.getRelative(x, y, z) != b.getBlock()) {
+                            blocks.add(currBlock.getRelative(x, y, z));
+                        }
                     }
-                    if(isLog(currBlock.getRelative(BlockFace.SOUTH).getType()) &&
-                            !blocks.contains(currBlock.getRelative(BlockFace.SOUTH))) {
-                        blocks.add(currBlock.getRelative(BlockFace.SOUTH));
-                        getServer().getConsoleSender().sendMessage(ChatColor.BLUE + "South Added");
-
-                    }
-                    if(isLog(currBlock.getRelative(BlockFace.EAST).getType()) &&
-                            !blocks.contains(currBlock.getRelative(BlockFace.EAST))) {
-                        blocks.add(currBlock.getRelative(BlockFace.EAST));
-                        getServer().getConsoleSender().sendMessage(ChatColor.BLUE + "East Added");
-
-                    }
-                    if(isLog(currBlock.getRelative(BlockFace.WEST).getType()) &&
-                            !blocks.contains(currBlock.getRelative(BlockFace.WEST))) {
-                        blocks.add(currBlock.getRelative(BlockFace.WEST));
-                        getServer().getConsoleSender().sendMessage(ChatColor.BLUE + "West Added");
-
-                    }
-
+                    blocks.remove();
                     if(logCount == 0) {
                         blocks.clear();
                         break;
