@@ -35,7 +35,7 @@ public class treefellerAxe extends Item implements Listener {
     private final Plugin plugin = RebelItems.getPlugin(RebelItems.class);
     private final NamespacedKey logCountKey = new NamespacedKey(plugin, "logCount");
     private List<Component> itemLore;
-    private static int minLogs = 4;
+    private static int minLogs = 3;
     private static int maxLogs = 8;
     private int numLogs;
 
