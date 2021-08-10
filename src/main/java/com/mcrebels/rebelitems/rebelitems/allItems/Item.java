@@ -7,6 +7,8 @@ public abstract class Item {
 
     public abstract String getName();
 
+    public abstract boolean checkBounds();
+    
     public ItemStack getItem(){
         return item;
     }
