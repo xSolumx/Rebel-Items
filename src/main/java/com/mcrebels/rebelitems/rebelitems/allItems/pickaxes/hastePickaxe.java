@@ -18,6 +18,8 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.Arrays;
 import java.util.List;
 
@@ -55,11 +57,11 @@ public class hastePickaxe extends Item implements Listener {
             double hasteChance = b.getPlayer().getInventory().getItemInMainHand().getItemMeta()
                     .getPersistentDataContainer().get(hasteChanceKey, PersistentDataType.DOUBLE);
             if(hasteChance > maxChance) {
-                updateChance(maxChance);
+                updateChance(b.getPlayer().getInventory().getItemInMainHand(), maxChance, true);
                 hasteChance = maxChance;
             }
             else if(hasteChance < minChance) {
-                updateChance(minChance);
+                updateChance(b.getPlayer().getInventory().getItemInMainHand(), minChance, false);
                 hasteChance = minChance;
             }
             if(Math.random() < hasteChance) {
@@ -71,7 +73,32 @@ public class hastePickaxe extends Item implements Listener {
     }
 
     public void checkBounds(Player player) {
-        //TODO with updateChance function
+        double currentChance = player.getInventory().getItemInMainHand().getItemMeta()
+                .getPersistentDataContainer().get(hasteChanceKey, PersistentDataType.DOUBLE);
+        if(currentChance > maxChance) {
+            updateChance(player.getInventory().getItemInMainHand(), maxChance, true);
+        }
+        else if(currentChance < minChance) {
+            updateChance(player.getInventory().getItemInMainHand(), minChance, false);
+        }
+    }
+
+    private void updateChance(ItemStack customItem, double newChance, boolean upBound) {
+        BigDecimal bd = new BigDecimal(newChance * 100);
+        bd = bd.round(new MathContext(3));
+        double displayChance = bd.doubleValue();
+        String loreValue = "<#521717>" + displayChance;
+        if(upBound) {
+            loreValue = "<#ffc400>" + displayChance;
+        }
+        itemLore = Arrays.asList(
+                MiniMessage.markdown().parse("<gradient:yellow:blue>===================</gradient>"),
+                MiniMessage.markdown().parse("<gradient:yellow:blue>Occasionally allows the user to mine faster!</gradient>"),
+                MiniMessage.markdown().parse("<yellow>Haste chance: " + loreValue + "%"));
+        ItemMeta tMeta = customItem.getItemMeta();
+        tMeta.getPersistentDataContainer().set(hasteChanceKey, PersistentDataType.DOUBLE, newChance);
+        tMeta.lore(itemLore);
+        customItem.setItemMeta(tMeta);
     }
 
     @Override

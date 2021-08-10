@@ -17,6 +17,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.Plugin;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.Arrays;
 import java.util.List;
 
@@ -53,11 +55,11 @@ public class randomPickaxe extends Item implements Listener {
             double dropChance = b.getPlayer().getInventory().getItemInMainHand().getItemMeta()
                     .getPersistentDataContainer().get(dropChanceKey, PersistentDataType.DOUBLE);
             if(dropChance > maxChance) {
-                updateChance(maxChance);
+                updateChance(b.getPlayer().getInventory().getItemInMainHand(), maxChance, true);
                 dropChance = maxChance;
             }
             else if(dropChance < minChance) {
-                updateChance(minChance);
+                updateChance(b.getPlayer().getInventory().getItemInMainHand(), minChance, false);
                 dropChance = minChance;
             }
             if(Math.random() < dropChance) {
@@ -71,7 +73,33 @@ public class randomPickaxe extends Item implements Listener {
     }
 
     public void checkBounds(Player player) {
-        //TODO with updateChance function
+        double currentChance = player.getInventory().getItemInMainHand().getItemMeta()
+                .getPersistentDataContainer().get(dropChanceKey, PersistentDataType.DOUBLE);
+        if(currentChance > maxChance) {
+            updateChance(player.getInventory().getItemInMainHand(), maxChance, true);
+        }
+        else if(currentChance < minChance) {
+            updateChance(player.getInventory().getItemInMainHand(), minChance, false);
+        }
+    }
+
+    private void updateChance(ItemStack customItem, double newChance, boolean upBound) {
+        BigDecimal bd = new BigDecimal(newChance * 100);
+        bd = bd.round(new MathContext(3));
+        double displayChance = bd.doubleValue();
+        String loreValue = "<#521717>" + displayChance;
+        if(upBound) {
+            loreValue = "<#ffc400>" + displayChance;
+        }
+        itemLore = Arrays.asList(
+                MiniMessage.markdown().parse("<gradient:yellow:blue>===================</gradient>"),
+                MiniMessage.markdown().parse("<gradient:yellow:blue>Occasionally gives the user a random minecraft </gradient>"),
+                MiniMessage.markdown().parse("<gradient:yellow:blue>block in addition to the broken block.</gradient>"),
+                MiniMessage.markdown().parse("<yellow>Drop chance: " + loreValue + "%"));
+        ItemMeta tMeta = customItem.getItemMeta();
+        tMeta.getPersistentDataContainer().set(dropChanceKey, PersistentDataType.DOUBLE, newChance);
+        tMeta.lore(itemLore);
+        customItem.setItemMeta(tMeta);
     }
 
     @Override
@@ -95,14 +123,6 @@ public class randomPickaxe extends Item implements Listener {
         tMeta.displayName(itemName);
         item.setItemMeta(tMeta);
         return item;
-    }
-
-
-    private void updateChance(double newChance) {
-        /*TODO: Update persistent data container in itemMeta
-        * (idk how we'll get the item yet)
-        * And update the item lore to display the new chance
-        */
     }
 
     private List<String> getMaterialList() {

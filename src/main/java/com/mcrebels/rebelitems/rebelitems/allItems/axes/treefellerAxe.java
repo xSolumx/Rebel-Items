@@ -10,11 +10,13 @@ import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.Plugin;
@@ -50,6 +52,7 @@ public class treefellerAxe extends Item implements Listener {
     @EventHandler
     private void onBlockBreak(BlockBreakEvent b){
         if(metaCheck(b.getPlayer(), customMetaID)) {
+            int brokenCount = 0;
             int logCount = b.getPlayer().getInventory().getItemInMainHand().getItemMeta()
                     .getPersistentDataContainer().get(logCountKey, PersistentDataType.INTEGER);
             if(logCount > maxLogs) {
@@ -65,6 +68,7 @@ public class treefellerAxe extends Item implements Listener {
                 Queue<Block> blocks = new LinkedList<>();
                 blocks.add(b.getBlock());
                 while(blocks.isEmpty() == false) {
+                    ++brokenCount;
                     --logCount;
                     Block currBlock = blocks.peek();
                     currBlock.breakNaturally();
@@ -107,6 +111,20 @@ public class treefellerAxe extends Item implements Listener {
                         break;
                     }
                 }
+                ItemStack tool = b.getPlayer().getInventory().getItemInMainHand();
+                Damageable toolDurability = (Damageable) tool.getItemMeta();
+                if(tool.containsEnchantment(Enchantment.DURABILITY)) {
+                    double unbreakingChance = 1.00 / tool.getEnchantmentLevel(Enchantment.DURABILITY);
+                    for(int z = 0; z < brokenCount; ++z) {
+                        if(Math.random() < unbreakingChance) {
+                            toolDurability.setDamage(toolDurability.getDamage() + 1);
+                        }
+                    }
+                }
+                else {
+                    toolDurability.setDamage(toolDurability.getDamage() + brokenCount);
+                }
+                tool.setItemMeta((ItemMeta)toolDurability);
             }
         }
     }
@@ -148,17 +166,17 @@ public class treefellerAxe extends Item implements Listener {
         }
     }
 
-    private void updateChance(ItemStack customItem, int newChance, boolean upBound) {
-        String loreValue = "<#521717>" + newChance;
+    private void updateChance(ItemStack customItem, int newCount, boolean upBound) {
+        String loreValue = "<#521717>" + newCount;
         if(upBound) {
-            loreValue = "<#ffc400>" + newChance;
+            loreValue = "<#ffc400>" + newCount;
         }
         itemLore = Arrays.asList(
                 MiniMessage.markdown().parse("<gradient:yellow:blue>===================</gradient>"),
                 MiniMessage.markdown().parse("<gradient:yellow:blue>Breaks multiple logs on each use!</gradient>"),
                 MiniMessage.markdown().parse("<yellow>Extra Log Amount: " + loreValue));
         ItemMeta tMeta = customItem.getItemMeta();
-        tMeta.getPersistentDataContainer().set(logCountKey, PersistentDataType.INTEGER, numLogs);
+        tMeta.getPersistentDataContainer().set(logCountKey, PersistentDataType.INTEGER, newCount);
         tMeta.lore(itemLore);
         customItem.setItemMeta(tMeta);
     }
