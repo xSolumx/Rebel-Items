@@ -54,6 +54,10 @@ public class chickenSword extends Item implements Listener {
         }
     }
 
+    public void checkBounds(Player player) {
+        //TODO with updateChance function
+    }
+
     @EventHandler
     private void onEntityHit(EntityDamageByEntityEvent e){
         if (e.getDamager() instanceof Player){

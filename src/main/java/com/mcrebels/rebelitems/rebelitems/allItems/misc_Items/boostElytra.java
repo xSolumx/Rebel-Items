@@ -93,11 +93,8 @@ public class boostElytra extends Item implements Listener {
         return item;
     }
 
-    public void reRollItem() {
-        //NEEDS UPDATING
-        //chance = (Math.random() * (maxChance - minChance) + minChance);
-        //chance = Math.floor(chance * 1000) / 1000;
-        //updateChance(chance);
+    public void checkBounds(Player player) {
+        //TODO with updateChance function
     }
 
     private void updateChance(double newChance) {

@@ -4,6 +4,7 @@ import com.mcrebels.rebelitems.rebelitems.RebelItems;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -38,6 +39,10 @@ public class testItem extends Item implements Listener {
         tMeta.lore(itemLore);
         tMeta.displayName(itemName);
         item.setItemMeta(tMeta);
+    }
+
+    public void checkBounds(Player player) {
+        //TODO with updateChance function
     }
 
     @Override

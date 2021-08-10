@@ -50,6 +50,10 @@ public class currency extends Item implements Listener {
         item.setItemMeta(tMeta);
     }
 
+    public void checkBounds(Player player) {
+        //TODO with updateChance function
+    }
+
     @Override
     public String getName() {
         return "Currency";

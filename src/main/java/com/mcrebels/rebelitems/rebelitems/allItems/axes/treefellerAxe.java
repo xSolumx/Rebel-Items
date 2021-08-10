@@ -53,11 +53,11 @@ public class treefellerAxe extends Item implements Listener {
             int logCount = b.getPlayer().getInventory().getItemInMainHand().getItemMeta()
                     .getPersistentDataContainer().get(logCountKey, PersistentDataType.INTEGER);
             if(logCount > maxLogs) {
-                updateChance(maxLogs);
+                updateChance(b.getPlayer().getInventory().getItemInMainHand(), maxLogs, true);
                 logCount = maxLogs;
             }
             else if(logCount < minLogs) {
-                updateChance(minLogs);
+                updateChance(b.getPlayer().getInventory().getItemInMainHand(), minLogs, false);
                 logCount = minLogs;
             }
             Material material = b.getBlock().getType();
@@ -137,11 +137,30 @@ public class treefellerAxe extends Item implements Listener {
         //Maybe DODO
     }
 
-    private void updateChance(double newChance) {
-        /*TODO: Update persistent data container in itemMeta
-         * (idk how we'll get the item yet)
-         * And update the item lore to display the new chance
-         */
+    public void checkBounds(Player player) {
+        int currentCount = player.getInventory().getItemInMainHand().getItemMeta()
+                .getPersistentDataContainer().get(logCountKey, PersistentDataType.INTEGER);
+        if(currentCount > maxLogs) {
+            updateChance(player.getInventory().getItemInMainHand(), maxLogs, true);
+        }
+        else if(currentCount < minLogs) {
+            updateChance(player.getInventory().getItemInMainHand(), minLogs, false);
+        }
+    }
+
+    private void updateChance(ItemStack customItem, int newChance, boolean upBound) {
+        String loreValue = "<#521717>" + newChance;
+        if(upBound) {
+            loreValue = "<#ffc400>" + newChance;
+        }
+        itemLore = Arrays.asList(
+                MiniMessage.markdown().parse("<gradient:yellow:blue>===================</gradient>"),
+                MiniMessage.markdown().parse("<gradient:yellow:blue>Breaks multiple logs on each use!</gradient>"),
+                MiniMessage.markdown().parse("<yellow>Extra Log Amount: " + loreValue));
+        ItemMeta tMeta = customItem.getItemMeta();
+        tMeta.getPersistentDataContainer().set(logCountKey, PersistentDataType.INTEGER, numLogs);
+        tMeta.lore(itemLore);
+        customItem.setItemMeta(tMeta);
     }
 
     private boolean isLog(Material material) {

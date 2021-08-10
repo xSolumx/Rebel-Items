@@ -79,6 +79,10 @@ public class multishotBow extends Item implements Listener {
         return item;
     }
 
+    public void checkBounds(Player player) {
+        //TODO with updateChance function
+    }
+
     @EventHandler
     public void onShoot(EntityShootBowEvent e ){
         if(e.getEntity() instanceof Player) {

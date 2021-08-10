@@ -1,5 +1,6 @@
 package com.mcrebels.rebelitems.rebelitems.allItems;
 
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 public abstract class Item {
@@ -7,11 +8,10 @@ public abstract class Item {
 
     public abstract String getName();
 
-    public abstract boolean checkBounds();
+    public abstract void checkBounds(Player player);
     
     public ItemStack getItem(){
         return item;
     }
-
 
 }

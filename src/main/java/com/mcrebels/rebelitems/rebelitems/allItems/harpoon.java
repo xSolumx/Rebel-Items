@@ -64,6 +64,10 @@ public class harpoon extends Item implements Listener {
         }
     }
 
+    public void checkBounds(Player player) {
+        //TODO with updateChance function
+    }
+
     @Override
     public String getName() {
         return "Harpoon";

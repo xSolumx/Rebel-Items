@@ -60,6 +60,10 @@ public class foundersSword extends Item implements Listener{
         return item;
     }
 
+    public void checkBounds(Player player) {
+        //TODO with updateChance function
+    }
+
     @EventHandler
     public void onKill(EntityDeathEvent e){
         if (e.getEntity().getKiller() != null){

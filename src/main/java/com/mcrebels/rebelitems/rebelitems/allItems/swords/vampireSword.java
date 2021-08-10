@@ -84,6 +84,9 @@ public class vampireSword extends Item implements Listener {
         return item;
     }
 
+    public void checkBounds(Player player) {
+        //TODO with updateChance function
+    }
 
     @EventHandler
     public void onSwordAttack(EntityDamageByEntityEvent e){

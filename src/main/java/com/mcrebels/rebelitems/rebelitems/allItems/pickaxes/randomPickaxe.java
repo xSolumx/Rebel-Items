@@ -70,6 +70,10 @@ public class randomPickaxe extends Item implements Listener {
         }
     }
 
+    public void checkBounds(Player player) {
+        //TODO with updateChance function
+    }
+
     @Override
     public String getName() {
         return "GamblerPickaxe";
@@ -93,12 +97,6 @@ public class randomPickaxe extends Item implements Listener {
         return item;
     }
 
-    public void reRollItem() {
-        //NEEDS UPDATING
-        chance = (Math.random() * (maxChance - minChance) + minChance);
-        chance = Math.floor(chance * 1000) / 1000;
-        updateChance(chance);
-    }
 
     private void updateChance(double newChance) {
         /*TODO: Update persistent data container in itemMeta

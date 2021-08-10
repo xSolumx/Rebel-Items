@@ -4,6 +4,7 @@ import com.mcrebels.rebelitems.rebelitems.allItems.Item;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -41,6 +42,10 @@ public class chickenBones extends Item {
         tMeta.lore(itemLore);
         tMeta.displayName(itemName);
         item.setItemMeta(tMeta);
+    }
+
+    public void checkBounds(Player player) {
+        //TODO with updateChance function
     }
 
     @Override

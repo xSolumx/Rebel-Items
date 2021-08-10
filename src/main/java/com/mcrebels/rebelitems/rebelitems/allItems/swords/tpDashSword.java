@@ -43,6 +43,10 @@ public class tpDashSword extends Item implements Listener {
         return item;
     }
 
+    public void checkBounds(Player player) {
+        //TODO with updateChance function
+    }
+
     @Override
     public String getName() {
         return "TP_Dash_Sword";
