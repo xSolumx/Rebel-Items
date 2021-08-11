@@ -22,6 +22,8 @@ import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.*;
 
 import static com.mcrebels.rebelitems.rebelitems.Utilities.*;
@@ -35,10 +37,10 @@ public class multishotBow extends Item implements Listener {
     private final Component itemName;
     private final Material itemMaterial = Material.BOW;
     private List<Component> itemLore;
-    private int minArrowAmount=1;
-    private int maxArrowAmount=10;
-    private double minchance=0.1;
-    private double maxchance = 1;
+    private static int minArrowAmount = 1;
+    private static int maxArrowAmount = 10;
+    private static double minchance = 0.1;
+    private static double maxchance = 1;
     private Integer arrowAmount;
     private Double chancePercent;
     private final NamespacedKey arrowAmountKey = new NamespacedKey(plugin, "arrowAmountKey");
@@ -50,6 +52,9 @@ public class multishotBow extends Item implements Listener {
         itemName = MiniMessage.markdown().parse(plugin.getConfig().getString(configID+".displayname"));
         minArrowAmount = plugin.getConfig().getInt(configID+".minarrowamount");
         maxArrowAmount = plugin.getConfig().getInt(configID+".maxarrowamount");
+        minchance = plugin.getConfig().getDouble(configID + ".minchance");
+        maxchance = plugin.getConfig().getDouble(configID + ".maxchance");
+
     }
 
     @Override
@@ -69,7 +74,7 @@ public class multishotBow extends Item implements Listener {
                 MiniMessage.markdown().parse("<gradient:green:blue>Grants the user a small amount of </gradient>"),
                 MiniMessage.markdown().parse("<gradient:green:blue>damage dealt as health</gradient>"),
                 MiniMessage.markdown().parse("<yellow>Max Extra Arrows: " + randomInfo.getFirst()),
-                MiniMessage.markdown().parse("<yellow>Chance: " + chanceInfo.getFirst() + "%"));
+                MiniMessage.markdown().parse("<yellow>Chance per Arrow: " + chanceInfo.getFirst() + "%"));
         tMeta.setCustomModelData(customMetaID);
         tMeta.getPersistentDataContainer().set(arrowAmountKey, PersistentDataType.INTEGER, arrowAmount);
         tMeta.getPersistentDataContainer().set(arrowChanceKey, PersistentDataType.DOUBLE, chancePercent);
@@ -80,7 +85,70 @@ public class multishotBow extends Item implements Listener {
     }
 
     public void checkBounds(Player player) {
-        //TODO with updateChance function
+        int currentNum = player.getInventory().getItemInMainHand().getItemMeta()
+                .getPersistentDataContainer().get(arrowAmountKey, PersistentDataType.INTEGER);
+        double currentChance = player.getInventory().getItemInMainHand().getItemMeta()
+                .getPersistentDataContainer().get(arrowChanceKey, PersistentDataType.DOUBLE);
+        boolean changeCount = false, changeChance = false, upCount = false, upChance = false;
+        if(currentChance > maxchance) {
+            changeChance = true;
+            upChance = true;
+        }
+        else if(currentChance < minchance) {
+            changeChance = true;
+            upChance = false;
+        }
+        if(currentNum > maxArrowAmount) {
+            changeCount = true;
+            upCount = true;
+        }
+        else if(currentNum < minArrowAmount) {
+            changeCount = true;
+            upCount = false;
+        }
+        if(changeCount || changeChance) {
+            updateChance(player.getInventory().getItemInMainHand(), changeCount, upCount, changeChance, upChance);
+        }
+    }
+
+    private void updateChance(ItemStack customItem, boolean changeCount, boolean upCount, boolean changeChance, boolean upChance) {
+        ItemMeta tMeta = customItem.getItemMeta();
+        itemLore = tMeta.lore();
+        double newChance = minchance;
+        if(upChance) {
+            newChance = maxchance;
+        }
+        BigDecimal bd = new BigDecimal(newChance * 100);
+        bd = bd.round(new MathContext(getPrecision()));
+        double displayChance = bd.doubleValue();
+        String loreChance = "<#521717>" + displayChance;
+        String loreCount = "<#521717>" + minArrowAmount;
+        if(upCount) {
+            loreCount = "<#ffc400>" + maxArrowAmount;
+        }
+        if(upChance) {
+            loreChance = "<#ffc400>" + displayChance;
+        }
+        if(changeCount) {
+            itemLore.set(3, MiniMessage.markdown().parse("<yellow>Max Extra Arrows: " + loreCount));
+            if(upCount) {
+                tMeta.getPersistentDataContainer().set(arrowAmountKey, PersistentDataType.INTEGER, maxArrowAmount);
+            }
+            else {
+                tMeta.getPersistentDataContainer().set(arrowAmountKey, PersistentDataType.INTEGER, minArrowAmount);
+            }
+        }
+        if(changeChance) {
+            itemLore.set(4,MiniMessage.markdown().parse("<yellow>Chance per Arrow: " + loreChance + "%"));
+            if(upChance) {
+                tMeta.getPersistentDataContainer().set(arrowChanceKey, PersistentDataType.DOUBLE, maxchance);
+            }
+            else {
+                tMeta.getPersistentDataContainer().set(arrowChanceKey, PersistentDataType.DOUBLE, minchance);
+            }
+        }
+        tMeta.lore(itemLore);
+        customItem.setItemMeta(tMeta);
     }
 
     @EventHandler
@@ -88,10 +156,11 @@ public class multishotBow extends Item implements Listener {
         if(e.getEntity() instanceof Player) {
             Player player = (Player) e.getEntity();
             if(metaCheck(player, customMetaID)){
-                Integer a = player.getInventory().getItemInMainHand().getItemMeta().getPersistentDataContainer().get(arrowAmountKey, PersistentDataType.INTEGER);
-                Double c = player.getInventory().getItemInMainHand().getItemMeta().getPersistentDataContainer().get(arrowChanceKey, PersistentDataType.DOUBLE);
-                for (int i = 0; i < a; i++) {
-                    if (Math.random() < c) {
+                checkBounds(player);
+                Integer arrowNum = player.getInventory().getItemInMainHand().getItemMeta().getPersistentDataContainer().get(arrowAmountKey, PersistentDataType.INTEGER);
+                Double multiChance = player.getInventory().getItemInMainHand().getItemMeta().getPersistentDataContainer().get(arrowChanceKey, PersistentDataType.DOUBLE);
+                for (int i = 0; i < arrowNum; i++) {
+                    if (Math.random() < multiChance) {
                         player.launchProjectile(Arrow.class, getRandomArrow(e.getProjectile().getVelocity())).setPickupStatus(DISALLOWED);
                     }
                     }

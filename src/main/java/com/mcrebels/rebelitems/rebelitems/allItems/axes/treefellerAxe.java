@@ -151,10 +151,6 @@ public class treefellerAxe extends Item implements Listener {
         return item;
     }
 
-    public void reRollItem() {
-        //Maybe DODO
-    }
-
     public void checkBounds(Player player) {
         int currentCount = player.getInventory().getItemInMainHand().getItemMeta()
                 .getPersistentDataContainer().get(logCountKey, PersistentDataType.INTEGER);

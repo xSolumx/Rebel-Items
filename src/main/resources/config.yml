@@ -18,9 +18,9 @@ testitem:
 vampiresword:
   displayname: "Vampire Sword"
   # minimum amount of damage to life steal (0 - 1)
-  minpercent: -.15
+  minpercent: -.5
   # maximum amount of damage to life steal (MUST be greater than minpercent)
-  maxpercent: .15
+  maxpercent: .5
 
 # Drops random blocks
 gamblerpickaxe:
@@ -60,7 +60,9 @@ founderssword:
 multishotbow:
   displayname: "Multishot Bow"
   minarrowamount: 1
-  maxarrowamount: 10
+  maxarrowamount: 25
+  minchance: .1
+  maxchance: .8
 
 # Breaks multiple logs in a tree
 treefelleraxe:

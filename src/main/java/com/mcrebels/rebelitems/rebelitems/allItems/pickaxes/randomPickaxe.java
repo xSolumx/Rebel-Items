@@ -22,8 +22,7 @@ import java.math.MathContext;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.mcrebels.rebelitems.rebelitems.Utilities.generateRandom;
-import static com.mcrebels.rebelitems.rebelitems.Utilities.metaCheck;
+import static com.mcrebels.rebelitems.rebelitems.Utilities.*;
 import static org.bukkit.Material.matchMaterial;
 
 public class randomPickaxe extends Item implements Listener {
@@ -85,7 +84,7 @@ public class randomPickaxe extends Item implements Listener {
 
     private void updateChance(ItemStack customItem, double newChance, boolean upBound) {
         BigDecimal bd = new BigDecimal(newChance * 100);
-        bd = bd.round(new MathContext(3));
+        bd = bd.round(new MathContext(getPrecision()));
         double displayChance = bd.doubleValue();
         String loreValue = "<#521717>" + displayChance;
         if(upBound) {

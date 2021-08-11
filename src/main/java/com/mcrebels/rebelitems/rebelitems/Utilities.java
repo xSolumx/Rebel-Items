@@ -111,4 +111,9 @@ public class Utilities {
         Pair<String, Integer> pair = new Pair<String, Integer>(color, value);
         return pair;
     }
+
+    //This is a very simple precision function to easily change the global precision (used in the legacy fix)
+    public static int getPrecision() {
+        return 3;
+    }
 }

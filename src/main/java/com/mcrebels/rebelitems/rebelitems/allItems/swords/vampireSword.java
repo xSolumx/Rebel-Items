@@ -18,6 +18,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.Plugin;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.Arrays;
@@ -85,7 +87,33 @@ public class vampireSword extends Item implements Listener {
     }
 
     public void checkBounds(Player player) {
-        //TODO with updateChance function
+        double currentChance = player.getInventory().getItemInMainHand().getItemMeta()
+                .getPersistentDataContainer().get(leechPercentKey, PersistentDataType.DOUBLE);
+        if(currentChance > maxPercent) {
+            updateChance(player.getInventory().getItemInMainHand(), maxPercent, true);
+        }
+        else if(currentChance < minPercent) {
+            updateChance(player.getInventory().getItemInMainHand(), minPercent, false);
+        }
+    }
+
+    private void updateChance(ItemStack customItem, double newChance, boolean upBound) {
+        BigDecimal bd = new BigDecimal(newChance * 100);
+        bd = bd.round(new MathContext(getPrecision()));
+        double displayChance = bd.doubleValue();
+        String loreValue = "<#521717>" + displayChance;
+        if(upBound) {
+            loreValue = "<#ffc400>" + displayChance;
+        }
+        itemLore = Arrays.asList(
+                MiniMessage.markdown().parse("<gradient:green:blue>===================</gradient>"),
+                MiniMessage.markdown().parse("<gradient:green:blue>Grants the user a small amount of </gradient>"),
+                MiniMessage.markdown().parse("<gradient:green:blue>damage dealt as health</gradient>"),
+                MiniMessage.markdown().parse("<blue>Leech amount: " + loreValue + "%"));
+        ItemMeta tMeta = customItem.getItemMeta();
+        tMeta.getPersistentDataContainer().set(leechPercentKey, PersistentDataType.DOUBLE, newChance);
+        tMeta.lore(itemLore);
+        customItem.setItemMeta(tMeta);
     }
 
     @EventHandler
@@ -96,6 +124,14 @@ public class vampireSword extends Item implements Listener {
                 double damageDone = e.getDamage();
                 double leechPercent = player.getInventory().getItemInMainHand().getItemMeta()
                         .getPersistentDataContainer().get(leechPercentKey, PersistentDataType.DOUBLE);
+                if(leechPercent > maxPercent) {
+                    updateChance(player.getInventory().getItemInMainHand(), maxPercent, true);
+                    leechPercent = maxPercent;
+                }
+                else if(leechPercent < minPercent) {
+                    updateChance(player.getInventory().getItemInMainHand(), minPercent, false);
+                    leechPercent = minPercent;
+                }
                 double lifeStealValue = damageDone * leechPercent;
                 if(player.getHealth()+lifeStealValue >= 20){
                     player.setHealth(20);
