@@ -3,33 +3,23 @@ package com.mcrebels.rebelitems.rebelitems;
 import co.aikar.commands.MessageKeys;
 import co.aikar.commands.MessageType;
 import co.aikar.commands.PaperCommandManager;
+import com.mcrebels.rebelitems.rebelitems.Effects.*;
 import com.mcrebels.rebelitems.rebelitems.allItems.*;
-import com.mcrebels.rebelitems.rebelitems.allItems.axes.berserkerAxe;
-import com.mcrebels.rebelitems.rebelitems.allItems.axes.treefellerAxe;
-import com.mcrebels.rebelitems.rebelitems.allItems.bows.multishotBow;
-import com.mcrebels.rebelitems.rebelitems.allItems.misc_Items.boostElytra;
-import com.mcrebels.rebelitems.rebelitems.allItems.misc_Paper.chickenBones;
-import com.mcrebels.rebelitems.rebelitems.allItems.misc_Paper.currency;
-import com.mcrebels.rebelitems.rebelitems.allItems.misc_Paper.token;
-import com.mcrebels.rebelitems.rebelitems.allItems.pickaxes.hastePickaxe;
-import com.mcrebels.rebelitems.rebelitems.allItems.pickaxes.randomPickaxe;
-import com.mcrebels.rebelitems.rebelitems.allItems.swords.chickenSword;
-import com.mcrebels.rebelitems.rebelitems.allItems.swords.foundersSword;
-import com.mcrebels.rebelitems.rebelitems.allItems.swords.tpDashSword;
-import com.mcrebels.rebelitems.rebelitems.allItems.swords.vampireSword;
+import com.mcrebels.rebelitems.rebelitems.allItems.swords.*;
 import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
+import org.bukkit.Bukkit;
+import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public final class RebelItems extends JavaPlugin {
@@ -41,6 +31,8 @@ public final class RebelItems extends JavaPlugin {
     private static Economy econ = null;
     private static Permission perms = null;
     private static Chat chat = null;
+
+    List<NamespacedKey> allKeys = new ArrayList<>();
 
     List<Item> allItems;
     List<String> allItemsAsString;
@@ -61,24 +53,18 @@ public final class RebelItems extends JavaPlugin {
         setupChat();
 
         //load item event listeners
-        getServer().getPluginManager().registerEvents(new vampireSword(), this);
-        getServer().getPluginManager().registerEvents(new harpoon(), this);
-        getServer().getPluginManager().registerEvents(new multishotBow(), this);
-        getServer().getPluginManager().registerEvents(new chickenSword(), this);
-        getServer().getPluginManager().registerEvents(new testItem(), this);
-        getServer().getPluginManager().registerEvents(new foundersSword(), this);
-        getServer().getPluginManager().registerEvents(new berserkerAxe(), this);
-        getServer().getPluginManager().registerEvents(new tpDashSword(), this);
-        getServer().getPluginManager().registerEvents(new randomPickaxe(), this);
-        getServer().getPluginManager().registerEvents(new hastePickaxe(), this);
-        getServer().getPluginManager().registerEvents(new boostElytra(), this);
-        getServer().getPluginManager().registerEvents(new treefellerAxe(), this);
+        getServer().getPluginManager().registerEvents(new midas(), this);
+        getServer().getPluginManager().registerEvents(new ice(),this);
+        getServer().getPluginManager().registerEvents(new leech(), this);
+        getServer().getPluginManager().registerEvents(new scope(), this);
 
+
+        /*
         getServer().getPluginManager().registerEvents(new currency(), this);
+        */
 
-        getServer().getPluginManager().registerEvents(new reRollGUI(), this);
-
-        getCommand("showgui").setExecutor(new reRollGUI());
+        getServer().getPluginManager().registerEvents(new RollItem(), this);
+        getCommand("showgui").setExecutor(new RollItem());
 
 
         //item name index for command completions (idek how to handle this better)
@@ -88,14 +74,29 @@ public final class RebelItems extends JavaPlugin {
 
         registerCommands();
 
+        addAllEffects();
+
         //loaded message
         getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "+++ RebelItems");
+    }
+
+    public static Set<Effect> allEffects = new HashSet<>();
+
+    private void addAllEffects(){
+        allEffects.add(new ice());
+        allEffects.add(new midas());
+        allEffects.add(new leech());
+        allEffects.add(new scope());
+    }
+
+    public static Set<Effect> getAllEffects(){
+        return allEffects;
     }
 
     //item name index for command completions (idek how to handle this better)
     public List<Item> getAllItems() {
         List<Item> allItems = Arrays.asList(
-                new foundersSword(),
+/*                new foundersSword(),
                 new testItem(),
                 new harpoon(),
                 new chickenSword(),
@@ -109,7 +110,8 @@ public final class RebelItems extends JavaPlugin {
                 new hastePickaxe(),
                 new boostElytra(),
                 new treefellerAxe(),
-                new token()
+                new token(),*/
+                new midasSword()
         );
         return allItems;
     };
@@ -146,9 +148,7 @@ public final class RebelItems extends JavaPlugin {
             if(sender instanceof Player) {
                 sender.sendMessage(ChatColor.RED + "RebelItems Reloaded");
             }
-
             registerCommands();
-
             return false;
         }
         return false;
@@ -187,6 +187,10 @@ public final class RebelItems extends JavaPlugin {
 
     public static Chat getChat() {
         return chat;
+    }
+
+    public static void LogToConsole(String log){
+        Bukkit.getLogger().log(Level.INFO,log);
     }
 
     @Override

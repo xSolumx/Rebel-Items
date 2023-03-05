@@ -1,12 +1,17 @@
 package com.mcrebels.rebelitems.rebelitems;
 
 import net.kyori.adventure.text.format.TextColor;
+import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.util.Random;
+import java.util.Set;
 import java.util.function.IntToDoubleFunction;
 
 
@@ -112,8 +117,49 @@ public class Utilities {
         return pair;
     }
 
+    public static Double generateRandomDouble(int min, int max){
+        Double mi = (min/100.0);
+        Double ma = (max/100.0);
+        Random rnd = new Random();
+        Double val =  rnd.nextDouble(mi, ma);
+        return val;
+    }
+
     //This is a very simple precision function to easily change the global precision (used in the legacy fix)
     public static int getPrecision() {
         return 3;
+    }
+
+    //Used to combine PDC's for Item effects
+    public static PersistentDataContainer mergePDC(PersistentDataContainer one,PersistentDataContainer two ){
+        PersistentDataContainer container = one.getAdapterContext().newPersistentDataContainer();
+        Set<NamespacedKey>  a = one.getKeys();
+        a.addAll(two.getKeys());
+        for (NamespacedKey k :
+             a) {
+            if (one.getKeys().contains(k)){
+                container.set(k, PersistentDataType.DOUBLE, one.get(k, PersistentDataType.DOUBLE));
+            }
+            if (two.getKeys().contains(k)){
+                container.set(k, PersistentDataType.DOUBLE, two.get(k, PersistentDataType.DOUBLE));
+            }
+
+        }
+        return container;
+    }
+
+    public static PersistentDataContainer mergePDCSet(Set<PersistentDataContainer> s){
+        PersistentDataContainer container = null;
+        for (PersistentDataContainer p :
+                s) {
+            if (container == null){
+                container = p.getAdapterContext().newPersistentDataContainer();
+            }
+            for (NamespacedKey k :
+                    p.getKeys()) {
+                container.set(k, PersistentDataType.DOUBLE,p.get(k,PersistentDataType.DOUBLE));
+            }
+        }
+        return container;
     }
 }

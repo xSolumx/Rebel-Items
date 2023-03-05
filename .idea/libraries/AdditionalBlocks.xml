@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="AdditionalBlocks">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../AdditionalBlocks" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../AdditionalBlocks/src/main/java" />
+    </SOURCES>
+  </library>
+</component>
